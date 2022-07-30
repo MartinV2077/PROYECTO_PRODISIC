@@ -40,10 +40,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.Dgv_Listado = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.Txt_descripcion = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.Btn_guardar = new System.Windows.Forms.Button();
             this.Btn_retornar = new System.Windows.Forms.Button();
             this.Btn_cancelar = new System.Windows.Forms.Button();
-            this.Txt_Impresora = new System.Windows.Forms.TextBox();
+            this.Txt_impresora = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.Btn_nuevo = new System.Windows.Forms.Button();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
@@ -53,8 +55,6 @@
             this.Btn_salir = new System.Windows.Forms.Button();
             this.Pnl_titulo_form = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.Tbc_principal.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_Listado)).BeginInit();
@@ -70,7 +70,7 @@
             this.Tbc_principal.Location = new System.Drawing.Point(12, 42);
             this.Tbc_principal.Name = "Tbc_principal";
             this.Tbc_principal.SelectedIndex = 0;
-            this.Tbc_principal.Size = new System.Drawing.Size(558, 355);
+            this.Tbc_principal.Size = new System.Drawing.Size(769, 355);
             this.Tbc_principal.TabIndex = 0;
             // 
             // tabPage1
@@ -83,7 +83,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 34);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(550, 317);
+            this.tabPage1.Size = new System.Drawing.Size(761, 317);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Consultas";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -92,7 +92,7 @@
             // 
             this.Lbl_totalregistros.AutoSize = true;
             this.Lbl_totalregistros.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_totalregistros.Location = new System.Drawing.Point(380, 258);
+            this.Lbl_totalregistros.Location = new System.Drawing.Point(601, 264);
             this.Lbl_totalregistros.Name = "Lbl_totalregistros";
             this.Lbl_totalregistros.Size = new System.Drawing.Size(117, 15);
             this.Lbl_totalregistros.TabIndex = 4;
@@ -154,26 +154,44 @@
             this.Dgv_Listado.Name = "Dgv_Listado";
             this.Dgv_Listado.ReadOnly = true;
             this.Dgv_Listado.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.Dgv_Listado.Size = new System.Drawing.Size(442, 163);
+            this.Dgv_Listado.Size = new System.Drawing.Size(695, 163);
             this.Dgv_Listado.TabIndex = 0;
             this.Dgv_Listado.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_Listado_CellDoubleClick);
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.textBox1);
+            this.tabPage2.Controls.Add(this.Txt_descripcion);
             this.tabPage2.Controls.Add(this.label4);
             this.tabPage2.Controls.Add(this.Btn_guardar);
             this.tabPage2.Controls.Add(this.Btn_retornar);
             this.tabPage2.Controls.Add(this.Btn_cancelar);
-            this.tabPage2.Controls.Add(this.Txt_Impresora);
+            this.tabPage2.Controls.Add(this.Txt_impresora);
             this.tabPage2.Controls.Add(this.label2);
             this.tabPage2.Location = new System.Drawing.Point(4, 34);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(550, 317);
+            this.tabPage2.Size = new System.Drawing.Size(761, 317);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Mantenimiento";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // Txt_descripcion
+            // 
+            this.Txt_descripcion.Location = new System.Drawing.Point(170, 63);
+            this.Txt_descripcion.MaxLength = 30;
+            this.Txt_descripcion.Name = "Txt_descripcion";
+            this.Txt_descripcion.ReadOnly = true;
+            this.Txt_descripcion.Size = new System.Drawing.Size(204, 20);
+            this.Txt_descripcion.TabIndex = 8;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(55, 66);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(109, 13);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "Area de Despacho (*)";
             // 
             // Btn_guardar
             // 
@@ -220,14 +238,14 @@
             this.Btn_cancelar.Visible = false;
             this.Btn_cancelar.Click += new System.EventHandler(this.Btn_cancelar_Click);
             // 
-            // Txt_Impresora
+            // Txt_impresora
             // 
-            this.Txt_Impresora.Location = new System.Drawing.Point(170, 89);
-            this.Txt_Impresora.MaxLength = 50;
-            this.Txt_Impresora.Name = "Txt_Impresora";
-            this.Txt_Impresora.ReadOnly = true;
-            this.Txt_Impresora.Size = new System.Drawing.Size(204, 20);
-            this.Txt_Impresora.TabIndex = 1;
+            this.Txt_impresora.Location = new System.Drawing.Point(170, 89);
+            this.Txt_impresora.MaxLength = 50;
+            this.Txt_impresora.Name = "Txt_impresora";
+            this.Txt_impresora.ReadOnly = true;
+            this.Txt_impresora.Size = new System.Drawing.Size(204, 20);
+            this.Txt_impresora.TabIndex = 1;
             // 
             // label2
             // 
@@ -370,24 +388,6 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "PRODISIC AREA DE DESPACHO";
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(170, 63);
-            this.textBox1.MaxLength = 30;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(204, 20);
-            this.textBox1.TabIndex = 8;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(65, 66);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(109, 13);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Area de Despacho (*)";
-            // 
             // Frm_Area_Despacho
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -428,7 +428,7 @@
         private System.Windows.Forms.Button Btn_guardar;
         private System.Windows.Forms.Button Btn_retornar;
         private System.Windows.Forms.Button Btn_cancelar;
-        private System.Windows.Forms.TextBox Txt_Impresora;
+        private System.Windows.Forms.TextBox Txt_impresora;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button Btn_nuevo;
         private System.Windows.Forms.Button Btn_actualizar;
@@ -439,7 +439,7 @@
         private System.Windows.Forms.Panel Pnl_titulo_form;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label Lbl_totalregistros;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox Txt_descripcion;
         private System.Windows.Forms.Label label4;
     }
 }

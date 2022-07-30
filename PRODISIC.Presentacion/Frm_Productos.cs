@@ -12,9 +12,9 @@ using PRODISIC.Negocio;
 
 namespace PRODISIC.Presentacion
 {
-    public partial class Frm_Area_Despacho : Form
+    public partial class Frm_Productos : Form
     {
-        public Frm_Area_Despacho()
+        public Frm_Productos()
         {
             InitializeComponent();
         }
@@ -22,29 +22,54 @@ namespace PRODISIC.Presentacion
         #region "Mis Variables"
 
         int nCodigo = 0;
+        int nCodigo_fa = 0;
         int Estadoguarda = 0;
 
         #endregion
 
         #region "Mis Metodos"
         
-        private void Formato_ad()
+        private void Formato_sf()
         {
             Dgv_Listado.Columns[0].Width = 100;
-            Dgv_Listado.Columns[0].HeaderText="CODIGO_AD";
-            Dgv_Listado.Columns[1].Width = 220;
-            Dgv_Listado.Columns[1].HeaderText = "AREA DE DESPACHO";
-            Dgv_Listado.Columns[2].Width = 300;
-            Dgv_Listado.Columns[2].HeaderText = "IMPRESORA";
+            Dgv_Listado.Columns[0].HeaderText="CODIGO_SF";
+            Dgv_Listado.Columns[1].Width = 260;
+            Dgv_Listado.Columns[1].HeaderText = "PRODISIC SUBFAMILIA";
+            Dgv_Listado.Columns[2].Width = 260;
+            Dgv_Listado.Columns[2].HeaderText = "PRODISIC FAMILIA";
+            Dgv_Listado.Columns[3].Visible = false;
         }
 
-        private void Listado_ad(string cTexto)
+        private void Formato_fa()
+        {
+            Dgv_1.Columns[0].Visible = false;
+            Dgv_1.Columns[1].Width = 320;
+            Dgv_1.Columns[1].HeaderText = "FAMILIA";
+            
+        }
+
+        private void Listado_sf(string cTexto)
         {
             try
             {
-                Dgv_Listado.DataSource = N_Area_Despacho.Listado_ad(cTexto);
-                this.Formato_ad();
+                Dgv_Listado.DataSource = N_SubFamilias.Listado_sf(cTexto);
+                this.Formato_sf();
                 Lbl_totalregistros.Text = "Total registros: " + Convert.ToString(Dgv_Listado.Rows.Count);
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+        }
+
+        private void Listado_fa(string cTexto)
+        {
+            try
+            {
+                Dgv_1.DataSource = N_SubFamilias.Listado_fa(cTexto);
+                this.Formato_fa();
+                
             }
             catch (Exception ex)
             {
@@ -55,8 +80,8 @@ namespace PRODISIC.Presentacion
 
         private void Limpia_Texto()
         {
-            Txt_descripcion.Text = "";
-            Txt_impresora.Text = "";
+            Txt_observacion.Text = "";
+            Txt_familia.Text = "";
            // Txt_descripcion.Clear();
         }
 
@@ -71,8 +96,7 @@ namespace PRODISIC.Presentacion
 
         private void Estado_Texto(bool lEstado)
         {
-            Txt_impresora.ReadOnly = !lEstado;
-            Txt_descripcion.ReadOnly = !lEstado;
+            Txt_observacion.ReadOnly = !lEstado;
         }
 
         private void Estado_BotonesProcesos(bool lEstado)
@@ -80,11 +104,12 @@ namespace PRODISIC.Presentacion
             Btn_cancelar.Visible = lEstado;
             Btn_guardar.Visible = lEstado;
             Btn_retornar.Visible = !lEstado;
+            Btn_lupa1.Visible=lEstado;
         }
 
         private void Selecciona_item()
         {
-            if (string.IsNullOrEmpty(Convert.ToString(Dgv_Listado.CurrentRow.Cells["codigo_ad"].Value)))
+            if (string.IsNullOrEmpty(Convert.ToString(Dgv_Listado.CurrentRow.Cells["codigo_sf"].Value)))
             {
                 MessageBox.Show("Selecciona un registro",
                                 "Aviso del Sistema",
@@ -93,18 +118,35 @@ namespace PRODISIC.Presentacion
             }
             else
             {
-                this.nCodigo = Convert.ToInt32(Dgv_Listado.CurrentRow.Cells["codigo_ad"].Value);
-                Txt_descripcion.Text = Convert.ToString(Dgv_Listado.CurrentRow.Cells["descripcion_ad"].Value);
-                Txt_impresora.Text = Convert.ToString(Dgv_Listado.CurrentRow.Cells["impresora"].Value);
+                this.nCodigo = Convert.ToInt32(Dgv_Listado.CurrentRow.Cells["codigo_sf"].Value);
+                Txt_observacion.Text = Convert.ToString(Dgv_Listado.CurrentRow.Cells["descripcion_sf"].Value);
+                Txt_familia.Text = Convert.ToString(Dgv_Listado.CurrentRow.Cells["descripcion_fa"].Value);
+                this.nCodigo_fa = Convert.ToInt32(Dgv_Listado.CurrentRow.Cells["codigo_fa"].Value);
             }
         }
 
+        private void Selecciona_item_fa()
+        {
+            if (string.IsNullOrEmpty(Convert.ToString(Dgv_1.CurrentRow.Cells["codigo_fa"].Value)))
+            {
+                MessageBox.Show("Selecciona un registro",
+                                "Aviso del Sistema",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Exclamation);
+            }
+            else
+            {
+                Txt_familia.Text = Convert.ToString(Dgv_1.CurrentRow.Cells["descripcion_fa"].Value);
+                this.nCodigo_fa = Convert.ToInt32(Dgv_1.CurrentRow.Cells["codigo_fa"].Value);
+            }
+        }
 
         #endregion
 
-        private void Frm_Area_Despacho_Load(object sender, EventArgs e)
+        private void Frm_Productos_Load(object sender, EventArgs e)
         {
-            this.Listado_ad("%");
+            this.Listado_sf("%");
+            this.Listado_fa("%");
         }
 
         private void Btn_nuevo_Click(object sender, EventArgs e)
@@ -115,8 +157,7 @@ namespace PRODISIC.Presentacion
             this.Limpia_Texto();
             this.Estado_Texto(true);
             Tbc_principal.SelectedIndex = 1;
-            Txt_impresora.Focus();
-            //Txt_descripcion.Focus();
+            Btn_lupa1.Focus();
         }
 
         private void Btn_cancelar_Click(object sender, EventArgs e)
@@ -137,7 +178,7 @@ namespace PRODISIC.Presentacion
         {
             try
             {
-                if (Txt_descripcion.Text == string.Empty || Txt_impresora.Text == string.Empty)
+                if (Txt_observacion.Text == String.Empty || Txt_familia.Text == String.Empty)
                 {
                     MessageBox.Show("Falta ingresar datos requeridos (*)",
                                     "Aviso del Sistema",
@@ -147,11 +188,11 @@ namespace PRODISIC.Presentacion
                 else
                 {
                     string Rpta = "";
-                    E_Area_Despacho oPropiedad = new E_Area_Despacho();
-                    oPropiedad.Codigo_ad = this.nCodigo;
-                    oPropiedad.Descripcion_ad = Txt_descripcion.Text.Trim();
-                    oPropiedad.Impresora = Txt_impresora.Text.Trim();
-                    Rpta = N_Area_Despacho.Guardar_ad(this.Estadoguarda,oPropiedad); 
+                    E_SubFamilias oPropiedad = new E_SubFamilias();
+                    oPropiedad.Codigo_sf = this.nCodigo;
+                    oPropiedad.Descripcion_sf = Txt_observacion.Text.Trim();
+                    oPropiedad.Codigo_fa = this.nCodigo_fa;
+                    Rpta = N_SubFamilias.Guardar_sf(this.Estadoguarda,oPropiedad); 
                     if (Rpta.Equals("OK"))
                     {
                         MessageBox.Show("Los datos han sido guardados correctamente",
@@ -163,7 +204,9 @@ namespace PRODISIC.Presentacion
                         this.Estado_BotonesPrincipales(true);
                         this.Estado_BotonesProcesos(false);
                         this.Estadoguarda = 0;
-                        this.Listado_ad("%");
+                        this.nCodigo = 0;
+                        this.nCodigo_fa = 0;
+                        this.Listado_sf("%");
                         Tbc_principal.SelectedIndex = 0;
                     }
                     else
@@ -193,7 +236,7 @@ namespace PRODISIC.Presentacion
                 this.Limpia_Texto();
                 this.Selecciona_item();
                 Tbc_principal.SelectedIndex = 1;
-                Txt_impresora.Focus();
+                Btn_lupa1.Focus();
             }
         }
 
@@ -219,14 +262,15 @@ namespace PRODISIC.Presentacion
                 {
                     string Rpta = "";
                     this.Selecciona_item();
-                    Rpta = N_Area_Despacho.Eliminar_ad(this.nCodigo);
+                    Rpta = N_SubFamilias.Eliminar_sf(this.nCodigo);
                     if (Rpta.Equals("OK"))
                     {
-                        this.Listado_ad("%");
+                        this.Listado_sf("%");
                         MessageBox.Show("EL registro ha sido eliminado",
                                         "Aviso del sistema",
                                         MessageBoxButtons.OK,
                                         MessageBoxIcon.Exclamation);
+                        this.nCodigo = 0;
                     }
                     else
                     {
@@ -243,22 +287,51 @@ namespace PRODISIC.Presentacion
 
         private void Btn_buscar_Click(object sender, EventArgs e)
         {
-            this.Listado_ad(txt_buscar.Text.Trim());
+            this.Listado_sf(txt_buscar.Text.Trim());
         }
 
         private void Btn_reporte_Click(object sender, EventArgs e)
         {
-            if (Dgv_Listado.Rows.Count > 0)
+           if (Dgv_Listado.Rows.Count > 0)
             {
-                Reportes.Frm_Rpt_Area_Despacho oRpt_ad = new Reportes.Frm_Rpt_Area_Despacho();
-                oRpt_ad.Txt_p1.Text = txt_buscar.Text.Trim();
-                oRpt_ad.ShowDialog();
+                Reportes.Frm_Rpt_SubFamilias oRpt_sf = new Reportes.Frm_Rpt_SubFamilias();
+                oRpt_sf.Txt_p1.Text = txt_buscar.Text.Trim();
+                oRpt_sf.ShowDialog();
             }
         }
 
         private void Btn_salir_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void Dgv_1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            this.Selecciona_item_fa();
+            Pnl_Listado_1.Visible = false;
+            Txt_observacion.Focus();
+        }
+
+        private void Btn_retornar1_Click(object sender, EventArgs e)
+        {
+            Pnl_Listado_1.Visible = false;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Listado_fa(Txt_buscar1.Text.Trim());
+        }
+
+        private void Btn_lupa1_Click(object sender, EventArgs e)
+        {
+            Pnl_Listado_1.Location = Btn_lupa1.Location;
+            Pnl_Listado_1.Visible = true;
+            Txt_buscar1.Focus();
+        }
+
+        private void tabPage2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
