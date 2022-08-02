@@ -64,6 +64,30 @@ namespace PRODISIC.Presentacion
             
         }
 
+        private void Formato_um()
+        {
+            Dgv_2.Columns[0].Visible = false;
+            Dgv_2.Columns[1].Width = 250;
+            Dgv_2.Columns[1].HeaderText = "MEDIDA";
+        }
+
+        private void Formato_sf()
+        {
+            Dgv_3.Columns[0].Visible = false;
+            Dgv_3.Columns[1].Width = 250;
+            Dgv_3.Columns[1].HeaderText = "SUBFAMILIA";
+            Dgv_3.Columns[2].Width = 250;
+            Dgv_3.Columns[2].HeaderText = "FAMILIA";
+            Dgv_3.Columns[3].Visible = false;
+        }
+
+        private void Formato_ad()
+        {
+            Dgv_4.Columns[0].Visible = false;
+            Dgv_4.Columns[1].Width = 250;
+            Dgv_4.Columns[1].HeaderText = "ÁREA DE DESPACHO";
+        }
+
         private void Listado_pr(string cTexto)
         {
             try
@@ -86,6 +110,48 @@ namespace PRODISIC.Presentacion
                 Dgv_1.DataSource = N_Productos.Listado_ma(cTexto);
                 this.Formato_ma();
                 
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+        }
+
+        private void Listado_um(string cTexto)
+        {
+            try
+            {
+                Dgv_2.DataSource = N_Productos.Listado_um(cTexto);
+                this.Formato_um();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+        }
+
+        private void Listado_sf(string cTexto)
+        {
+            try
+            {
+                Dgv_3.DataSource = N_Productos.Listado_sf(cTexto);
+                this.Formato_sf();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+        }
+
+        private void Listado_ad(string cTexto)
+        {
+            try
+            {
+                Dgv_4.DataSource = N_Productos.Listado_ad(cTexto);
+                this.Formato_ad();
             }
             catch (Exception ex)
             {
@@ -121,18 +187,30 @@ namespace PRODISIC.Presentacion
             Txt_observacion.ReadOnly = !lEstado;
         }
 
-        private void Estado_BotonesProcesos(bool lEstado)
+        private void Estado_BotonesProcesos(bool Lestado)
         {
-            Btn_cancelar.Visible = lEstado;
-            Btn_guardar.Visible = lEstado;
-            Btn_retornar.Visible = !lEstado;
-            Btn_lupa_ma.Visible=lEstado;
+            Btn_cancelar.Visible = Lestado;
+            Btn_guardar.Visible = Lestado;
+            Btn_retornar.Visible = !Lestado;
+            Btn_lupa_ma.Visible = Lestado;
+            Btn_lupa_um.Visible = Lestado;
+            Btn_lupa_sf.Visible = Lestado;
+            Btn_lupa_ad.Visible = Lestado;
+            Btn_agregar_imagen.Visible = Lestado;
         }
 
         private void Mostrar_img(int nCodigo_pr)
         {
             Byte[] bImagen = new byte[0];
             bImagen = N_Productos.Mostrar_img(nCodigo_pr);
+            MemoryStream ms = new MemoryStream(bImagen);
+            Pct_imagen.Image = System.Drawing.Bitmap.FromStream(ms);
+        }
+
+        private void Mostrar_img_prod_pred()
+        {
+            Byte[] bImagen = new byte[0];
+            bImagen = N_Productos.Mostrar_img_prod_pred();
             MemoryStream ms = new MemoryStream(bImagen);
             Pct_imagen.Image = System.Drawing.Bitmap.FromStream(ms);
         }
@@ -242,24 +320,85 @@ namespace PRODISIC.Presentacion
             }
         }
 
+        private void Selecciona_item_um()
+        {
+            if (string.IsNullOrEmpty(Convert.ToString(Dgv_2.CurrentRow.Cells["codigo_um"].Value)))
+            {
+                MessageBox.Show("Selecciona un registro",
+                                "Aviso del Sistema",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Exclamation);
+            }
+            else
+            {
+                Txt_descripcion_um.Text = Convert.ToString(Dgv_2.CurrentRow.Cells["descripcion_um"].Value);
+                this.nCodigo_um = Convert.ToInt32(Dgv_2.CurrentRow.Cells["codigo_um"].Value);
+            }
+        }
+
+        private void Selecciona_item_sf()
+        {
+            if (string.IsNullOrEmpty(Convert.ToString(Dgv_3.CurrentRow.Cells["codigo_sf"].Value)))
+            {
+                MessageBox.Show("Selecciona un registro",
+                                "Aviso del Sistema",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Exclamation);
+            }
+            else
+            {
+                Txt_descripcion_sf.Text = Convert.ToString(Dgv_3.CurrentRow.Cells["descripcion_sf"].Value);
+                this.nCodigo_sf = Convert.ToInt32(Dgv_3.CurrentRow.Cells["codigo_sf"].Value);
+            }
+        }
+
+        private void Selecciona_item_ad()
+        {
+            if (string.IsNullOrEmpty(Convert.ToString(Dgv_4.CurrentRow.Cells["codigo_ad"].Value)))
+            {
+                MessageBox.Show("Selecciona un registro",
+                                "Aviso del Sistema",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Exclamation);
+            }
+            else
+            {
+                Txt_descripcion_ad.Text = Convert.ToString(Dgv_4.CurrentRow.Cells["descripcion_ad"].Value);
+                this.nCodigo_ad = Convert.ToInt32(Dgv_4.CurrentRow.Cells["codigo_ad"].Value);
+            }
+        }
+
         #endregion
 
         private void Frm_Productos_Load(object sender, EventArgs e)
         {
             this.Listado_pr("%");
             this.Listado_ma("%");
+            this.Listado_um("%");
+            this.Listado_sf("%");
+            this.Listado_ad("%");
+            this.Crear_Tabla_pv();
+
         }
 
         private void Btn_nuevo_Click(object sender, EventArgs e)
         {
-            this.Estadoguarda = 1; //Nuevo registro
+            this.Estadoguarda = 1; //Nuevo Registro 
             this.Estado_BotonesPrincipales(false);
             this.Estado_BotonesProcesos(true);
             this.Limpia_Texto();
             this.Estado_Texto(true);
+            this.Puntos_Ventas_OK(this.Estadoguarda, this.nCodigo);
+            this.Mostrar_img_prod_pred();
+            this.nCodigo = 0;
+            this.nCodigo_ma = 0;
+            this.nCodigo_um = 0;
+            this.nCodigo_sf = 0;
+            this.nCodigo_ad = 0;
             Tbc_principal.SelectedIndex = 1;
-            Btn_lupa_ma.Focus();
+            Txt_descripcion_pr.Focus();
         }
+
 
         private void Btn_cancelar_Click(object sender, EventArgs e)
         {
@@ -279,7 +418,12 @@ namespace PRODISIC.Presentacion
         {
             try
             {
-                if (Txt_precio_unitario.Text == String.Empty || Txt_descripcion_sf.Text == String.Empty)
+                if (Txt_descripcion_pr.Text == String.Empty ||
+                    Txt_descripcion_ma.Text == String.Empty ||
+                    Txt_descripcion_um.Text == String.Empty ||
+                    Txt_descripcion_sf.Text == String.Empty ||
+                    Txt_descripcion_ad.Text == String.Empty ||
+                    Txt_precio_unitario.Text == String.Empty)
                 {
                     MessageBox.Show("Falta ingresar datos requeridos (*)",
                                     "Aviso del Sistema",
@@ -289,15 +433,24 @@ namespace PRODISIC.Presentacion
                 else
                 {
                     string Rpta = "";
-                    E_SubFamilias oPropiedad = new E_SubFamilias();
-                    oPropiedad.Codigo_sf = this.nCodigo;
-                    oPropiedad.Descripcion_sf = Txt_observacion.Text.Trim();
-                    oPropiedad.Codigo_fa = this.nCodigo_ma;
-                    Rpta = N_SubFamilias.Guardar_sf(this.Estadoguarda,oPropiedad); 
+                    E_Productos oPropiedad = new E_Productos();
+                    oPropiedad.Codigo_pr = this.nCodigo;
+                    oPropiedad.Descripcion_pr = Txt_descripcion_pr.Text.Trim();
+                    oPropiedad.Codigo_ma = this.nCodigo_ma;
+                    oPropiedad.Codigo_um = this.nCodigo_um;
+                    oPropiedad.Codigo_sf = this.nCodigo_sf;
+                    oPropiedad.Codigo_ad = this.nCodigo_ad;
+                    oPropiedad.Precio_unitario = Convert.ToDecimal(Txt_precio_unitario.Text);
+                    oPropiedad.Observacion = Txt_observacion.Text.Trim();
+                    MemoryStream ms = new MemoryStream();
+                    Pct_imagen.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
+                    oPropiedad.Imagen = ms.GetBuffer();
+
+                    Rpta = N_Productos.Guardar_pr(this.Estadoguarda, oPropiedad, Dtdetalle);
                     if (Rpta.Equals("OK"))
                     {
                         MessageBox.Show("Los datos han sido guardados correctamente",
-                                        "Aviso del sistema",
+                                        "Aviso del Sistema",
                                         MessageBoxButtons.OK,
                                         MessageBoxIcon.Information);
                         this.Limpia_Texto();
@@ -307,13 +460,16 @@ namespace PRODISIC.Presentacion
                         this.Estadoguarda = 0;
                         this.nCodigo = 0;
                         this.nCodigo_ma = 0;
+                        this.nCodigo_um = 0;
+                        this.nCodigo_sf = 0;
+                        this.nCodigo_ad = 0;
                         this.Listado_pr("%");
                         Tbc_principal.SelectedIndex = 0;
                     }
                     else
                     {
-                        MessageBox.Show(Rpta, 
-                                        "Aviso del sistema", 
+                        MessageBox.Show(Rpta,
+                                        "Aviso del Sistema",
                                         MessageBoxButtons.OK,
                                         MessageBoxIcon.Exclamation);
                     }
@@ -321,7 +477,6 @@ namespace PRODISIC.Presentacion
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.Message + ex.StackTrace);
             }
         }
@@ -358,21 +513,25 @@ namespace PRODISIC.Presentacion
             if (Dgv_Listado.Rows.Count > 0)
             {
                 DialogResult Opcion;
-                Opcion = MessageBox.Show("¿Esta seguro de eliminar el registro seleccionado?",
+                Opcion = MessageBox.Show("¿Estás seguro de eliminar el registro seleccionado?",
                                         "Aviso del Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (Opcion==DialogResult.Yes)
+                if (Opcion == DialogResult.Yes)
                 {
                     string Rpta = "";
                     this.Selecciona_item();
-                    Rpta = N_SubFamilias.Eliminar_sf(this.nCodigo);
+                    Rpta = N_Productos.Eliminar_pr(this.nCodigo);
                     if (Rpta.Equals("OK"))
                     {
                         this.Listado_pr("%");
-                        MessageBox.Show("EL registro ha sido eliminado",
-                                        "Aviso del sistema",
+                        MessageBox.Show("El registro ha sido eliminado",
+                                        "Aviso del Sistema",
                                         MessageBoxButtons.OK,
                                         MessageBoxIcon.Exclamation);
                         this.nCodigo = 0;
+                        this.nCodigo_ma = 0;
+                        this.nCodigo_um = 0;
+                        this.nCodigo_sf = 0;
+                        this.nCodigo_ad = 0;
                     }
                     else
                     {
@@ -383,22 +542,21 @@ namespace PRODISIC.Presentacion
                     }
                     this.Limpia_Texto();
                 }
-                
             }
         }
 
         private void Btn_buscar_Click(object sender, EventArgs e)
         {
-            this.Listado_pr(txt_buscar.Text.Trim());
+            this.Listado_pr(Txt_buscar.Text.Trim());
         }
 
         private void Btn_reporte_Click(object sender, EventArgs e)
         {
-           if (Dgv_Listado.Rows.Count > 0)
+            if (Dgv_Listado.Rows.Count > 0)
             {
-                Reportes.Frm_Rpt_SubFamilias oRpt_sf = new Reportes.Frm_Rpt_SubFamilias();
-                oRpt_sf.Txt_p1.Text = txt_buscar.Text.Trim();
-                oRpt_sf.ShowDialog();
+                Reportes.Frm_Rpt_Productos oRpt_pr = new Reportes.Frm_Rpt_Productos();
+                oRpt_pr.Txt_p1.Text = Txt_buscar.Text.Trim();
+                oRpt_pr.ShowDialog();
             }
         }
 
@@ -426,7 +584,7 @@ namespace PRODISIC.Presentacion
 
         private void Btn_lupa1_Click(object sender, EventArgs e)
         {
-            //Pnl_Listado_1.Location = Btn_lupa1.Location;
+            Pnl_Listado_1.Location = Btn_lupa_ma.Location;
             Pnl_Listado_1.Visible = true;
             Txt_buscar1.Focus();
         }
@@ -434,6 +592,88 @@ namespace PRODISIC.Presentacion
         private void tabPage2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void Btn_lupa_um_Click(object sender, EventArgs e)
+        {
+            Pnl_Listado_2.Location = Btn_lupa_um.Location;
+            Pnl_Listado_2.Visible = true;
+            Txt_buscar2.Focus();
+        }
+
+        private void Btn_retornar2_Click(object sender, EventArgs e)
+        {
+            Pnl_Listado_2.Visible = false;
+        }
+
+        private void Btn_buscar2_Click(object sender, EventArgs e)
+        {
+            this.Listado_um(Txt_buscar2.Text.Trim());
+        }
+
+        private void Dgv_2_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            this.Selecciona_item_um();
+            Pnl_Listado_2.Visible = false;
+        }
+
+        private void Btn_retornar3_Click(object sender, EventArgs e)
+        {
+            Pnl_Listado_3.Visible = false;
+        }
+
+        private void Btn_buscar3_Click(object sender, EventArgs e)
+        {
+            this.Listado_sf(Txt_buscar3.Text.Trim());
+        }
+
+        private void Dgv_3_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            this.Selecciona_item_sf();
+            Pnl_Listado_3.Visible = false;
+            Txt_precio_unitario.Focus();
+        }
+
+        private void Btn_lupa_sf_Click(object sender, EventArgs e)
+        {
+            Pnl_Listado_3.Location = Btn_lupa_ma.Location;
+            Pnl_Listado_3.Visible = true;
+            Txt_buscar3.Focus();
+        }
+
+        private void Btn_retornar4_Click(object sender, EventArgs e)
+        {
+            Pnl_Listado_4.Visible = false;
+        }
+
+        private void Btn_buscar4_Click(object sender, EventArgs e)
+        {
+            this.Listado_ad(Txt_buscar4.Text.Trim());
+        }
+
+        
+        private void Dgv_4_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            this.Selecciona_item_ad();
+            Pnl_Listado_4.Visible = false;
+            Txt_observacion.Focus();
+        }
+
+        private void Btn_lupa_ad_Click(object sender, EventArgs e)
+        {
+            Pnl_Listado_4.Location = Btn_lupa_sf.Location;
+            Pnl_Listado_4.Visible = true;
+            Txt_buscar4.Focus();
+        }
+
+        private void Btn_agregar_imagen_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog Foto = new OpenFileDialog();
+            Foto.Filter = "Image files(*.jpg, *.jpe, *.jfif, *.png) | *.jpg; *.jpeg; *.jpe; *.jfif; *.png";
+            if (Foto.ShowDialog() == DialogResult.OK)
+            {
+                Pct_imagen.Image = Image.FromFile(Foto.FileName);
+            }
         }
     }
 }

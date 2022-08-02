@@ -18,7 +18,7 @@ namespace PRODISIC.Entidades
 
         public int Codigo_sf { get; set; }
 
-        public int Precio_unitario { get; set; }
+        public decimal Precio_unitario { get; set; }
 
         public int Codigo_ad { get; set; }
 
