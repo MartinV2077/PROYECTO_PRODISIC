@@ -16,7 +16,7 @@ namespace PRODISIC.Presentacion
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Frm_Productos());
+            Application.Run(new Frm_DashBoard());
         }
     }
 }
