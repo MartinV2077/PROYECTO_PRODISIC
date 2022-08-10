@@ -32,6 +32,11 @@
             this.Pnl_menu = new System.Windows.Forms.Panel();
             this.CerrarSesion = new FontAwesome.Sharp.IconButton();
             this.Pnl_datosmaestros = new System.Windows.Forms.Panel();
+            this.DM_areadespacho = new FontAwesome.Sharp.IconButton();
+            this.DM_mesas = new FontAwesome.Sharp.IconButton();
+            this.DM_puntoventas = new FontAwesome.Sharp.IconButton();
+            this.DM_Familias = new FontAwesome.Sharp.IconButton();
+            this.DM_subfamilias = new FontAwesome.Sharp.IconButton();
             this.DM_medidas = new FontAwesome.Sharp.IconButton();
             this.DM_marcas = new FontAwesome.Sharp.IconButton();
             this.DM_productos = new FontAwesome.Sharp.IconButton();
@@ -44,7 +49,7 @@
             this.Pnl_procesos = new System.Windows.Forms.Panel();
             this.iconButton3 = new FontAwesome.Sharp.IconButton();
             this.iconButton2 = new FontAwesome.Sharp.IconButton();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.PR_registrarpedido = new FontAwesome.Sharp.IconButton();
             this.Btn_Procesos = new FontAwesome.Sharp.IconButton();
             this.Btn_Dashboard = new FontAwesome.Sharp.IconButton();
             this.Pnl_logo = new System.Windows.Forms.Panel();
@@ -62,18 +67,13 @@
             this.Lbl_fecha = new System.Windows.Forms.Label();
             this.Lbl_hora = new System.Windows.Forms.Label();
             this.Pnl_contenido = new System.Windows.Forms.Panel();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.Pnl_logoPRODISIC = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.DM_subfamilias = new FontAwesome.Sharp.IconButton();
-            this.DM_Familias = new FontAwesome.Sharp.IconButton();
-            this.DM_puntoventas = new FontAwesome.Sharp.IconButton();
-            this.DM_mesas = new FontAwesome.Sharp.IconButton();
-            this.DM_areadespacho = new FontAwesome.Sharp.IconButton();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.Pnl_menu.SuspendLayout();
             this.Pnl_datosmaestros.SuspendLayout();
             this.Pnl_reportes.SuspendLayout();
@@ -146,6 +146,121 @@
             this.Pnl_datosmaestros.Size = new System.Drawing.Size(235, 409);
             this.Pnl_datosmaestros.TabIndex = 5;
             this.Pnl_datosmaestros.Visible = false;
+            // 
+            // DM_areadespacho
+            // 
+            this.DM_areadespacho.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.DM_areadespacho.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DM_areadespacho.Dock = System.Windows.Forms.DockStyle.Top;
+            this.DM_areadespacho.FlatAppearance.BorderSize = 0;
+            this.DM_areadespacho.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DM_areadespacho.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.DM_areadespacho.IconChar = FontAwesome.Sharp.IconChar.FileAlt;
+            this.DM_areadespacho.IconColor = System.Drawing.Color.WhiteSmoke;
+            this.DM_areadespacho.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.DM_areadespacho.IconSize = 34;
+            this.DM_areadespacho.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.DM_areadespacho.Location = new System.Drawing.Point(0, 350);
+            this.DM_areadespacho.Name = "DM_areadespacho";
+            this.DM_areadespacho.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.DM_areadespacho.Size = new System.Drawing.Size(235, 50);
+            this.DM_areadespacho.TabIndex = 9;
+            this.DM_areadespacho.Text = "Areas Despachos";
+            this.DM_areadespacho.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.DM_areadespacho.UseVisualStyleBackColor = false;
+            this.DM_areadespacho.Click += new System.EventHandler(this.DM_areadespacho_Click);
+            // 
+            // DM_mesas
+            // 
+            this.DM_mesas.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.DM_mesas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DM_mesas.Dock = System.Windows.Forms.DockStyle.Top;
+            this.DM_mesas.FlatAppearance.BorderSize = 0;
+            this.DM_mesas.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DM_mesas.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.DM_mesas.IconChar = FontAwesome.Sharp.IconChar.FileAlt;
+            this.DM_mesas.IconColor = System.Drawing.Color.WhiteSmoke;
+            this.DM_mesas.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.DM_mesas.IconSize = 34;
+            this.DM_mesas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.DM_mesas.Location = new System.Drawing.Point(0, 300);
+            this.DM_mesas.Name = "DM_mesas";
+            this.DM_mesas.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.DM_mesas.Size = new System.Drawing.Size(235, 50);
+            this.DM_mesas.TabIndex = 8;
+            this.DM_mesas.Text = "Mesas";
+            this.DM_mesas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.DM_mesas.UseVisualStyleBackColor = false;
+            this.DM_mesas.Click += new System.EventHandler(this.DM_mesas_Click);
+            // 
+            // DM_puntoventas
+            // 
+            this.DM_puntoventas.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.DM_puntoventas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DM_puntoventas.Dock = System.Windows.Forms.DockStyle.Top;
+            this.DM_puntoventas.FlatAppearance.BorderSize = 0;
+            this.DM_puntoventas.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DM_puntoventas.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.DM_puntoventas.IconChar = FontAwesome.Sharp.IconChar.FileAlt;
+            this.DM_puntoventas.IconColor = System.Drawing.Color.WhiteSmoke;
+            this.DM_puntoventas.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.DM_puntoventas.IconSize = 34;
+            this.DM_puntoventas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.DM_puntoventas.Location = new System.Drawing.Point(0, 250);
+            this.DM_puntoventas.Name = "DM_puntoventas";
+            this.DM_puntoventas.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.DM_puntoventas.Size = new System.Drawing.Size(235, 50);
+            this.DM_puntoventas.TabIndex = 7;
+            this.DM_puntoventas.Text = "Puntos de Ventas";
+            this.DM_puntoventas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.DM_puntoventas.UseVisualStyleBackColor = false;
+            this.DM_puntoventas.Click += new System.EventHandler(this.DM_puntoventas_Click);
+            // 
+            // DM_Familias
+            // 
+            this.DM_Familias.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.DM_Familias.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DM_Familias.Dock = System.Windows.Forms.DockStyle.Top;
+            this.DM_Familias.FlatAppearance.BorderSize = 0;
+            this.DM_Familias.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DM_Familias.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.DM_Familias.IconChar = FontAwesome.Sharp.IconChar.FileAlt;
+            this.DM_Familias.IconColor = System.Drawing.Color.WhiteSmoke;
+            this.DM_Familias.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.DM_Familias.IconSize = 34;
+            this.DM_Familias.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.DM_Familias.Location = new System.Drawing.Point(0, 200);
+            this.DM_Familias.Name = "DM_Familias";
+            this.DM_Familias.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.DM_Familias.Size = new System.Drawing.Size(235, 50);
+            this.DM_Familias.TabIndex = 6;
+            this.DM_Familias.Text = "Familias";
+            this.DM_Familias.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.DM_Familias.UseVisualStyleBackColor = false;
+            this.DM_Familias.Click += new System.EventHandler(this.DM_Familias_Click);
+            // 
+            // DM_subfamilias
+            // 
+            this.DM_subfamilias.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.DM_subfamilias.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DM_subfamilias.Dock = System.Windows.Forms.DockStyle.Top;
+            this.DM_subfamilias.FlatAppearance.BorderSize = 0;
+            this.DM_subfamilias.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DM_subfamilias.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.DM_subfamilias.IconChar = FontAwesome.Sharp.IconChar.FileAlt;
+            this.DM_subfamilias.IconColor = System.Drawing.Color.WhiteSmoke;
+            this.DM_subfamilias.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.DM_subfamilias.IconSize = 34;
+            this.DM_subfamilias.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.DM_subfamilias.Location = new System.Drawing.Point(0, 150);
+            this.DM_subfamilias.Name = "DM_subfamilias";
+            this.DM_subfamilias.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.DM_subfamilias.Size = new System.Drawing.Size(235, 50);
+            this.DM_subfamilias.TabIndex = 5;
+            this.DM_subfamilias.Text = "SubFamilias";
+            this.DM_subfamilias.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.DM_subfamilias.UseVisualStyleBackColor = false;
+            this.DM_subfamilias.Click += new System.EventHandler(this.DM_subfamilias_Click);
             // 
             // DM_medidas
             // 
@@ -344,7 +459,7 @@
             this.Pnl_procesos.BackColor = System.Drawing.Color.LightGray;
             this.Pnl_procesos.Controls.Add(this.iconButton3);
             this.Pnl_procesos.Controls.Add(this.iconButton2);
-            this.Pnl_procesos.Controls.Add(this.iconButton1);
+            this.Pnl_procesos.Controls.Add(this.PR_registrarpedido);
             this.Pnl_procesos.Dock = System.Windows.Forms.DockStyle.Top;
             this.Pnl_procesos.Location = new System.Drawing.Point(0, 250);
             this.Pnl_procesos.Name = "Pnl_procesos";
@@ -396,27 +511,28 @@
             this.iconButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.iconButton2.UseVisualStyleBackColor = false;
             // 
-            // iconButton1
+            // PR_registrarpedido
             // 
-            this.iconButton1.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.iconButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButton1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.iconButton1.FlatAppearance.BorderSize = 0;
-            this.iconButton1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.SquareUpRight;
-            this.iconButton1.IconColor = System.Drawing.Color.WhiteSmoke;
-            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.IconSize = 34;
-            this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton1.Location = new System.Drawing.Point(0, 0);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.iconButton1.Size = new System.Drawing.Size(235, 50);
-            this.iconButton1.TabIndex = 2;
-            this.iconButton1.Text = "Opcion1";
-            this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton1.UseVisualStyleBackColor = false;
+            this.PR_registrarpedido.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.PR_registrarpedido.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PR_registrarpedido.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PR_registrarpedido.FlatAppearance.BorderSize = 0;
+            this.PR_registrarpedido.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PR_registrarpedido.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.PR_registrarpedido.IconChar = FontAwesome.Sharp.IconChar.SquareUpRight;
+            this.PR_registrarpedido.IconColor = System.Drawing.Color.WhiteSmoke;
+            this.PR_registrarpedido.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.PR_registrarpedido.IconSize = 34;
+            this.PR_registrarpedido.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.PR_registrarpedido.Location = new System.Drawing.Point(0, 0);
+            this.PR_registrarpedido.Name = "PR_registrarpedido";
+            this.PR_registrarpedido.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.PR_registrarpedido.Size = new System.Drawing.Size(235, 50);
+            this.PR_registrarpedido.TabIndex = 2;
+            this.PR_registrarpedido.Text = "Registrar Pedido";
+            this.PR_registrarpedido.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.PR_registrarpedido.UseVisualStyleBackColor = false;
+            this.PR_registrarpedido.Click += new System.EventHandler(this.PR_registrarpedido_Click);
             // 
             // Btn_Procesos
             // 
@@ -570,7 +686,6 @@
             this.IconoSeleccionado.IconChar = FontAwesome.Sharp.IconChar.Home;
             this.IconoSeleccionado.IconColor = System.Drawing.SystemColors.ControlText;
             this.IconoSeleccionado.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.IconoSeleccionado.IconSize = 36;
             this.IconoSeleccionado.Location = new System.Drawing.Point(6, 54);
             this.IconoSeleccionado.Name = "IconoSeleccionado";
             this.IconoSeleccionado.Size = new System.Drawing.Size(45, 32);
@@ -664,11 +779,6 @@
             this.Pnl_contenido.Size = new System.Drawing.Size(1032, 500);
             this.Pnl_contenido.TabIndex = 3;
             // 
-            // timer1
-            // 
-            this.timer1.Enabled = true;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
             // Pnl_logoPRODISIC
             // 
             this.Pnl_logoPRODISIC.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -683,15 +793,35 @@
             this.Pnl_logoPRODISIC.Size = new System.Drawing.Size(500, 361);
             this.Pnl_logoPRODISIC.TabIndex = 0;
             // 
-            // pictureBox1
+            // label7
             // 
-            this.pictureBox1.Image = global::PRODISIC.Presentacion.Properties.Resources.Logo_PRODISIC;
-            this.pictureBox1.Location = new System.Drawing.Point(100, 19);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(306, 251);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
+            this.label7.AutoSize = true;
+            this.label7.ForeColor = System.Drawing.Color.OrangeRed;
+            this.label7.Location = new System.Drawing.Point(147, 340);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(259, 12);
+            this.label7.TabIndex = 6;
+            this.label7.Text = "REALIZADO POR APRENDIZ MARTIN VASQUEZ";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.Color.OrangeRed;
+            this.label5.Location = new System.Drawing.Point(221, 320);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(91, 12);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "FICHA 2281978";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.Color.OrangeRed;
+            this.label4.Location = new System.Drawing.Point(196, 308);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(147, 12);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "PROYECTO SENA DE ADSI";
             // 
             // label3
             // 
@@ -704,150 +834,20 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "VERSION 0.1";
             // 
-            // label4
+            // pictureBox1
             // 
-            this.label4.AutoSize = true;
-            this.label4.ForeColor = System.Drawing.Color.OrangeRed;
-            this.label4.Location = new System.Drawing.Point(196, 308);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(147, 12);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "PROYECTO SENA DE ADSI";
+            this.pictureBox1.Image = global::PRODISIC.Presentacion.Properties.Resources.Logo_PRODISIC;
+            this.pictureBox1.Location = new System.Drawing.Point(100, 19);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(306, 251);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
             // 
-            // label5
+            // timer1
             // 
-            this.label5.AutoSize = true;
-            this.label5.ForeColor = System.Drawing.Color.OrangeRed;
-            this.label5.Location = new System.Drawing.Point(221, 320);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(91, 12);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "FICHA 2281978";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.ForeColor = System.Drawing.Color.OrangeRed;
-            this.label7.Location = new System.Drawing.Point(147, 340);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(259, 12);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "REALIZADO POR APRENDIZ MARTIN VASQUEZ";
-            // 
-            // DM_subfamilias
-            // 
-            this.DM_subfamilias.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.DM_subfamilias.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.DM_subfamilias.Dock = System.Windows.Forms.DockStyle.Top;
-            this.DM_subfamilias.FlatAppearance.BorderSize = 0;
-            this.DM_subfamilias.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DM_subfamilias.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.DM_subfamilias.IconChar = FontAwesome.Sharp.IconChar.FileAlt;
-            this.DM_subfamilias.IconColor = System.Drawing.Color.WhiteSmoke;
-            this.DM_subfamilias.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.DM_subfamilias.IconSize = 34;
-            this.DM_subfamilias.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.DM_subfamilias.Location = new System.Drawing.Point(0, 150);
-            this.DM_subfamilias.Name = "DM_subfamilias";
-            this.DM_subfamilias.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.DM_subfamilias.Size = new System.Drawing.Size(235, 50);
-            this.DM_subfamilias.TabIndex = 5;
-            this.DM_subfamilias.Text = "SubFamilias";
-            this.DM_subfamilias.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.DM_subfamilias.UseVisualStyleBackColor = false;
-            this.DM_subfamilias.Click += new System.EventHandler(this.DM_subfamilias_Click);
-            // 
-            // DM_Familias
-            // 
-            this.DM_Familias.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.DM_Familias.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.DM_Familias.Dock = System.Windows.Forms.DockStyle.Top;
-            this.DM_Familias.FlatAppearance.BorderSize = 0;
-            this.DM_Familias.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DM_Familias.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.DM_Familias.IconChar = FontAwesome.Sharp.IconChar.FileAlt;
-            this.DM_Familias.IconColor = System.Drawing.Color.WhiteSmoke;
-            this.DM_Familias.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.DM_Familias.IconSize = 34;
-            this.DM_Familias.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.DM_Familias.Location = new System.Drawing.Point(0, 200);
-            this.DM_Familias.Name = "DM_Familias";
-            this.DM_Familias.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.DM_Familias.Size = new System.Drawing.Size(235, 50);
-            this.DM_Familias.TabIndex = 6;
-            this.DM_Familias.Text = "Familias";
-            this.DM_Familias.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.DM_Familias.UseVisualStyleBackColor = false;
-            this.DM_Familias.Click += new System.EventHandler(this.DM_Familias_Click);
-            // 
-            // DM_puntoventas
-            // 
-            this.DM_puntoventas.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.DM_puntoventas.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.DM_puntoventas.Dock = System.Windows.Forms.DockStyle.Top;
-            this.DM_puntoventas.FlatAppearance.BorderSize = 0;
-            this.DM_puntoventas.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DM_puntoventas.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.DM_puntoventas.IconChar = FontAwesome.Sharp.IconChar.FileAlt;
-            this.DM_puntoventas.IconColor = System.Drawing.Color.WhiteSmoke;
-            this.DM_puntoventas.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.DM_puntoventas.IconSize = 34;
-            this.DM_puntoventas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.DM_puntoventas.Location = new System.Drawing.Point(0, 250);
-            this.DM_puntoventas.Name = "DM_puntoventas";
-            this.DM_puntoventas.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.DM_puntoventas.Size = new System.Drawing.Size(235, 50);
-            this.DM_puntoventas.TabIndex = 7;
-            this.DM_puntoventas.Text = "Puntos de Ventas";
-            this.DM_puntoventas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.DM_puntoventas.UseVisualStyleBackColor = false;
-            this.DM_puntoventas.Click += new System.EventHandler(this.DM_puntoventas_Click);
-            // 
-            // DM_mesas
-            // 
-            this.DM_mesas.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.DM_mesas.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.DM_mesas.Dock = System.Windows.Forms.DockStyle.Top;
-            this.DM_mesas.FlatAppearance.BorderSize = 0;
-            this.DM_mesas.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DM_mesas.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.DM_mesas.IconChar = FontAwesome.Sharp.IconChar.FileAlt;
-            this.DM_mesas.IconColor = System.Drawing.Color.WhiteSmoke;
-            this.DM_mesas.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.DM_mesas.IconSize = 34;
-            this.DM_mesas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.DM_mesas.Location = new System.Drawing.Point(0, 300);
-            this.DM_mesas.Name = "DM_mesas";
-            this.DM_mesas.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.DM_mesas.Size = new System.Drawing.Size(235, 50);
-            this.DM_mesas.TabIndex = 8;
-            this.DM_mesas.Text = "Mesas";
-            this.DM_mesas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.DM_mesas.UseVisualStyleBackColor = false;
-            this.DM_mesas.Click += new System.EventHandler(this.DM_mesas_Click);
-            // 
-            // DM_areadespacho
-            // 
-            this.DM_areadespacho.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.DM_areadespacho.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.DM_areadespacho.Dock = System.Windows.Forms.DockStyle.Top;
-            this.DM_areadespacho.FlatAppearance.BorderSize = 0;
-            this.DM_areadespacho.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DM_areadespacho.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.DM_areadespacho.IconChar = FontAwesome.Sharp.IconChar.FileAlt;
-            this.DM_areadespacho.IconColor = System.Drawing.Color.WhiteSmoke;
-            this.DM_areadespacho.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.DM_areadespacho.IconSize = 34;
-            this.DM_areadespacho.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.DM_areadespacho.Location = new System.Drawing.Point(0, 350);
-            this.DM_areadespacho.Name = "DM_areadespacho";
-            this.DM_areadespacho.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.DM_areadespacho.Size = new System.Drawing.Size(235, 50);
-            this.DM_areadespacho.TabIndex = 9;
-            this.DM_areadespacho.Text = "Areas Despachos";
-            this.DM_areadespacho.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.DM_areadespacho.UseVisualStyleBackColor = false;
-            this.DM_areadespacho.Click += new System.EventHandler(this.DM_areadespacho_Click);
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // Frm_DashBoard
             // 
@@ -891,7 +891,7 @@
         private FontAwesome.Sharp.IconButton Btn_Dashboard;
         private FontAwesome.Sharp.IconButton Btn_Procesos;
         private System.Windows.Forms.Panel Pnl_procesos;
-        private FontAwesome.Sharp.IconButton iconButton1;
+        private FontAwesome.Sharp.IconButton PR_registrarpedido;
         private FontAwesome.Sharp.IconButton iconButton3;
         private FontAwesome.Sharp.IconButton iconButton2;
         private System.Windows.Forms.Panel Pnl_reportes;

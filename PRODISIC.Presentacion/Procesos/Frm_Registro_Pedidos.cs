@@ -16,5 +16,10 @@ namespace PRODISIC.Presentacion.Procesos
         {
             InitializeComponent();
         }
+
+        private void Btn_salir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
