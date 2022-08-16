@@ -30,11 +30,14 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Registro_Pedidos));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Pnl_titulo_form = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.Pnl_superior = new System.Windows.Forms.Panel();
+            this.Pnl_Listado_1 = new System.Windows.Forms.Panel();
+            this.Btn_retornar1 = new System.Windows.Forms.Button();
+            this.Dgv_1 = new System.Windows.Forms.DataGridView();
             this.Lbl_mensaje = new System.Windows.Forms.Label();
             this.Txt_estado = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -50,15 +53,12 @@
             this.Pnl_titulo_mesas = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.Pnl_Listado_1 = new System.Windows.Forms.Panel();
-            this.Btn_retornar1 = new System.Windows.Forms.Button();
-            this.Dgv_1 = new System.Windows.Forms.DataGridView();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.Pnl_titulo_form.SuspendLayout();
             this.Pnl_superior.SuspendLayout();
-            this.Pnl_titulo_mesas.SuspendLayout();
             this.Pnl_Listado_1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_1)).BeginInit();
+            this.Pnl_titulo_mesas.SuspendLayout();
             this.SuspendLayout();
             // 
             // Pnl_titulo_form
@@ -103,6 +103,58 @@
             this.Pnl_superior.Name = "Pnl_superior";
             this.Pnl_superior.Size = new System.Drawing.Size(984, 140);
             this.Pnl_superior.TabIndex = 8;
+            // 
+            // Pnl_Listado_1
+            // 
+            this.Pnl_Listado_1.BackColor = System.Drawing.Color.LightCyan;
+            this.Pnl_Listado_1.Controls.Add(this.Btn_retornar1);
+            this.Pnl_Listado_1.Controls.Add(this.Dgv_1);
+            this.Pnl_Listado_1.Location = new System.Drawing.Point(223, 8);
+            this.Pnl_Listado_1.Name = "Pnl_Listado_1";
+            this.Pnl_Listado_1.Size = new System.Drawing.Size(291, 106);
+            this.Pnl_Listado_1.TabIndex = 15;
+            this.Pnl_Listado_1.Visible = false;
+            // 
+            // Btn_retornar1
+            // 
+            this.Btn_retornar1.FlatAppearance.BorderColor = System.Drawing.Color.CornflowerBlue;
+            this.Btn_retornar1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_retornar1.Image = ((System.Drawing.Image)(resources.GetObject("Btn_retornar1.Image")));
+            this.Btn_retornar1.Location = new System.Drawing.Point(248, 3);
+            this.Btn_retornar1.Name = "Btn_retornar1";
+            this.Btn_retornar1.Size = new System.Drawing.Size(34, 27);
+            this.Btn_retornar1.TabIndex = 13;
+            this.Btn_retornar1.UseVisualStyleBackColor = true;
+            this.Btn_retornar1.Click += new System.EventHandler(this.Btn_retornar1_Click);
+            // 
+            // Dgv_1
+            // 
+            this.Dgv_1.AllowUserToAddRows = false;
+            this.Dgv_1.AllowUserToDeleteRows = false;
+            this.Dgv_1.AllowUserToOrderColumns = true;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Lavender;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            this.Dgv_1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.Dgv_1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.Dgv_1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.Info;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Dgv_1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.Dgv_1.ColumnHeadersHeight = 34;
+            this.Dgv_1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.Dgv_1.EnableHeadersVisualStyles = false;
+            this.Dgv_1.Location = new System.Drawing.Point(3, 3);
+            this.Dgv_1.Name = "Dgv_1";
+            this.Dgv_1.ReadOnly = true;
+            this.Dgv_1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.Dgv_1.Size = new System.Drawing.Size(239, 100);
+            this.Dgv_1.TabIndex = 12;
+            this.Dgv_1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_1_CellDoubleClick);
             // 
             // Lbl_mensaje
             // 
@@ -207,9 +259,9 @@
             this.Btn_salir.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.Btn_salir.ImageKey = "salir.png";
             this.Btn_salir.ImageList = this.imageList1;
-            this.Btn_salir.Location = new System.Drawing.Point(868, 32);
+            this.Btn_salir.Location = new System.Drawing.Point(853, 32);
             this.Btn_salir.Name = "Btn_salir";
-            this.Btn_salir.Size = new System.Drawing.Size(75, 60);
+            this.Btn_salir.Size = new System.Drawing.Size(90, 60);
             this.Btn_salir.TabIndex = 6;
             this.Btn_salir.Text = "Salir";
             this.Btn_salir.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -273,64 +325,13 @@
             // 
             // flowLayoutPanel1
             // 
+            this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 216);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(984, 384);
             this.flowLayoutPanel1.TabIndex = 10;
-            // 
-            // Pnl_Listado_1
-            // 
-            this.Pnl_Listado_1.BackColor = System.Drawing.Color.LightCyan;
-            this.Pnl_Listado_1.Controls.Add(this.Btn_retornar1);
-            this.Pnl_Listado_1.Controls.Add(this.Dgv_1);
-            this.Pnl_Listado_1.Location = new System.Drawing.Point(223, 8);
-            this.Pnl_Listado_1.Name = "Pnl_Listado_1";
-            this.Pnl_Listado_1.Size = new System.Drawing.Size(291, 106);
-            this.Pnl_Listado_1.TabIndex = 15;
-            this.Pnl_Listado_1.Visible = false;
-            // 
-            // Btn_retornar1
-            // 
-            this.Btn_retornar1.FlatAppearance.BorderColor = System.Drawing.Color.CornflowerBlue;
-            this.Btn_retornar1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_retornar1.Image = ((System.Drawing.Image)(resources.GetObject("Btn_retornar1.Image")));
-            this.Btn_retornar1.Location = new System.Drawing.Point(248, 3);
-            this.Btn_retornar1.Name = "Btn_retornar1";
-            this.Btn_retornar1.Size = new System.Drawing.Size(34, 27);
-            this.Btn_retornar1.TabIndex = 13;
-            this.Btn_retornar1.UseVisualStyleBackColor = true;
-            this.Btn_retornar1.Click += new System.EventHandler(this.Btn_retornar1_Click);
-            // 
-            // Dgv_1
-            // 
-            this.Dgv_1.AllowUserToAddRows = false;
-            this.Dgv_1.AllowUserToDeleteRows = false;
-            this.Dgv_1.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.Lavender;
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
-            this.Dgv_1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
-            this.Dgv_1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.Dgv_1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.Info;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Dgv_1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
-            this.Dgv_1.ColumnHeadersHeight = 34;
-            this.Dgv_1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.Dgv_1.EnableHeadersVisualStyles = false;
-            this.Dgv_1.Location = new System.Drawing.Point(3, 3);
-            this.Dgv_1.Name = "Dgv_1";
-            this.Dgv_1.ReadOnly = true;
-            this.Dgv_1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.Dgv_1.Size = new System.Drawing.Size(239, 100);
-            this.Dgv_1.TabIndex = 12;
-            this.Dgv_1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_1_CellDoubleClick);
             // 
             // timer1
             // 
@@ -354,10 +355,10 @@
             this.Pnl_titulo_form.PerformLayout();
             this.Pnl_superior.ResumeLayout(false);
             this.Pnl_superior.PerformLayout();
-            this.Pnl_titulo_mesas.ResumeLayout(false);
-            this.Pnl_titulo_mesas.PerformLayout();
             this.Pnl_Listado_1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_1)).EndInit();
+            this.Pnl_titulo_mesas.ResumeLayout(false);
+            this.Pnl_titulo_mesas.PerformLayout();
             this.ResumeLayout(false);
 
         }

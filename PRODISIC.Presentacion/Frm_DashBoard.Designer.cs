@@ -48,7 +48,7 @@
             this.Btn_reportes = new FontAwesome.Sharp.IconButton();
             this.Pnl_procesos = new System.Windows.Forms.Panel();
             this.iconButton3 = new FontAwesome.Sharp.IconButton();
-            this.iconButton2 = new FontAwesome.Sharp.IconButton();
+            this.PR_gestionturnos = new FontAwesome.Sharp.IconButton();
             this.PR_registrarpedido = new FontAwesome.Sharp.IconButton();
             this.Btn_Procesos = new FontAwesome.Sharp.IconButton();
             this.Btn_Dashboard = new FontAwesome.Sharp.IconButton();
@@ -458,7 +458,7 @@
             // 
             this.Pnl_procesos.BackColor = System.Drawing.Color.LightGray;
             this.Pnl_procesos.Controls.Add(this.iconButton3);
-            this.Pnl_procesos.Controls.Add(this.iconButton2);
+            this.Pnl_procesos.Controls.Add(this.PR_gestionturnos);
             this.Pnl_procesos.Controls.Add(this.PR_registrarpedido);
             this.Pnl_procesos.Dock = System.Windows.Forms.DockStyle.Top;
             this.Pnl_procesos.Location = new System.Drawing.Point(0, 250);
@@ -489,27 +489,28 @@
             this.iconButton3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.iconButton3.UseVisualStyleBackColor = false;
             // 
-            // iconButton2
+            // PR_gestionturnos
             // 
-            this.iconButton2.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.iconButton2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButton2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.iconButton2.FlatAppearance.BorderSize = 0;
-            this.iconButton2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.SquareUpRight;
-            this.iconButton2.IconColor = System.Drawing.Color.WhiteSmoke;
-            this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton2.IconSize = 34;
-            this.iconButton2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton2.Location = new System.Drawing.Point(0, 50);
-            this.iconButton2.Name = "iconButton2";
-            this.iconButton2.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.iconButton2.Size = new System.Drawing.Size(235, 50);
-            this.iconButton2.TabIndex = 3;
-            this.iconButton2.Text = "Opcion2";
-            this.iconButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton2.UseVisualStyleBackColor = false;
+            this.PR_gestionturnos.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.PR_gestionturnos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PR_gestionturnos.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PR_gestionturnos.FlatAppearance.BorderSize = 0;
+            this.PR_gestionturnos.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PR_gestionturnos.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.PR_gestionturnos.IconChar = FontAwesome.Sharp.IconChar.SquareUpRight;
+            this.PR_gestionturnos.IconColor = System.Drawing.Color.WhiteSmoke;
+            this.PR_gestionturnos.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.PR_gestionturnos.IconSize = 34;
+            this.PR_gestionturnos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.PR_gestionturnos.Location = new System.Drawing.Point(0, 50);
+            this.PR_gestionturnos.Name = "PR_gestionturnos";
+            this.PR_gestionturnos.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.PR_gestionturnos.Size = new System.Drawing.Size(235, 50);
+            this.PR_gestionturnos.TabIndex = 3;
+            this.PR_gestionturnos.Text = "Gestion de Turnos";
+            this.PR_gestionturnos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.PR_gestionturnos.UseVisualStyleBackColor = false;
+            this.PR_gestionturnos.Click += new System.EventHandler(this.PR_gestionturnos_Click);
             // 
             // PR_registrarpedido
             // 
@@ -861,6 +862,7 @@
             this.Name = "Frm_DashBoard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Frm_DashBoard";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Pnl_menu.ResumeLayout(false);
             this.Pnl_datosmaestros.ResumeLayout(false);
             this.Pnl_reportes.ResumeLayout(false);
@@ -893,7 +895,7 @@
         private System.Windows.Forms.Panel Pnl_procesos;
         private FontAwesome.Sharp.IconButton PR_registrarpedido;
         private FontAwesome.Sharp.IconButton iconButton3;
-        private FontAwesome.Sharp.IconButton iconButton2;
+        private FontAwesome.Sharp.IconButton PR_gestionturnos;
         private System.Windows.Forms.Panel Pnl_reportes;
         private FontAwesome.Sharp.IconButton iconButton6;
         private FontAwesome.Sharp.IconButton Btn_reportes;
