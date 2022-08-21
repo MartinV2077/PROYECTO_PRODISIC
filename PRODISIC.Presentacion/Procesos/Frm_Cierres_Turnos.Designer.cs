@@ -34,18 +34,18 @@
             this.label3 = new System.Windows.Forms.Label();
             this.Dgv_1 = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.Txt_puntoventa = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.Txt_fecha_trabajo = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.Txt_turno = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.Btn_cerrarturno = new System.Windows.Forms.Button();
+            this.Btn_abrirturno = new System.Windows.Forms.Button();
             this.Txt_estado = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.Btn_abrirturno = new System.Windows.Forms.Button();
-            this.Btn_cerrarturno = new System.Windows.Forms.Button();
+            this.Txt_turno = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.Txt_fecha_trabajo = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.Txt_puntoventa = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.Pnl_titulo_form.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -101,6 +101,7 @@
             this.Dgv_1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.Dgv_1.Size = new System.Drawing.Size(480, 180);
             this.Dgv_1.TabIndex = 13;
+            this.Dgv_1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_1_CellClick);
             // 
             // panel1
             // 
@@ -120,6 +121,134 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(480, 268);
             this.panel1.TabIndex = 14;
+            // 
+            // Btn_cerrarturno
+            // 
+            this.Btn_cerrarturno.BackColor = System.Drawing.Color.DimGray;
+            this.Btn_cerrarturno.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Btn_cerrarturno.Enabled = false;
+            this.Btn_cerrarturno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_cerrarturno.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_cerrarturno.ForeColor = System.Drawing.SystemColors.Info;
+            this.Btn_cerrarturno.Location = new System.Drawing.Point(234, 200);
+            this.Btn_cerrarturno.Name = "Btn_cerrarturno";
+            this.Btn_cerrarturno.Size = new System.Drawing.Size(187, 38);
+            this.Btn_cerrarturno.TabIndex = 25;
+            this.Btn_cerrarturno.Text = "Cerrar turno";
+            this.Btn_cerrarturno.UseVisualStyleBackColor = false;
+            this.Btn_cerrarturno.Click += new System.EventHandler(this.Btn_cerrarturno_Click);
+            // 
+            // Btn_abrirturno
+            // 
+            this.Btn_abrirturno.BackColor = System.Drawing.Color.SeaGreen;
+            this.Btn_abrirturno.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Btn_abrirturno.Enabled = false;
+            this.Btn_abrirturno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_abrirturno.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_abrirturno.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.Btn_abrirturno.Location = new System.Drawing.Point(29, 200);
+            this.Btn_abrirturno.Name = "Btn_abrirturno";
+            this.Btn_abrirturno.Size = new System.Drawing.Size(187, 38);
+            this.Btn_abrirturno.TabIndex = 24;
+            this.Btn_abrirturno.Text = "Abrir siguiente turno";
+            this.Btn_abrirturno.UseVisualStyleBackColor = false;
+            this.Btn_abrirturno.Click += new System.EventHandler(this.Btn_abrirturno_Click);
+            // 
+            // Txt_estado
+            // 
+            this.Txt_estado.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.Txt_estado.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Txt_estado.Location = new System.Drawing.Point(165, 162);
+            this.Txt_estado.Name = "Txt_estado";
+            this.Txt_estado.ReadOnly = true;
+            this.Txt_estado.Size = new System.Drawing.Size(256, 22);
+            this.Txt_estado.TabIndex = 23;
+            this.Txt_estado.Text = "Estado x";
+            this.Txt_estado.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.label6.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label6.Location = new System.Drawing.Point(46, 167);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(117, 14);
+            this.label6.TabIndex = 22;
+            this.label6.Text = "ESTADO ACTUAL:";
+            // 
+            // Txt_turno
+            // 
+            this.Txt_turno.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.Txt_turno.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Txt_turno.Location = new System.Drawing.Point(165, 129);
+            this.Txt_turno.Name = "Txt_turno";
+            this.Txt_turno.ReadOnly = true;
+            this.Txt_turno.Size = new System.Drawing.Size(256, 22);
+            this.Txt_turno.TabIndex = 21;
+            this.Txt_turno.Text = "Turno x";
+            this.Txt_turno.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.label5.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label5.Location = new System.Drawing.Point(107, 134);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(56, 14);
+            this.label5.TabIndex = 20;
+            this.label5.Text = "TURNO:";
+            // 
+            // Txt_fecha_trabajo
+            // 
+            this.Txt_fecha_trabajo.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.Txt_fecha_trabajo.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Txt_fecha_trabajo.Location = new System.Drawing.Point(165, 94);
+            this.Txt_fecha_trabajo.Name = "Txt_fecha_trabajo";
+            this.Txt_fecha_trabajo.ReadOnly = true;
+            this.Txt_fecha_trabajo.Size = new System.Drawing.Size(256, 22);
+            this.Txt_fecha_trabajo.TabIndex = 19;
+            this.Txt_fecha_trabajo.Text = "Fecha trabajo x";
+            this.Txt_fecha_trabajo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.label4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label4.Location = new System.Drawing.Point(26, 99);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(137, 14);
+            this.label4.TabIndex = 18;
+            this.label4.Text = "FECHA DE TRABAJO:";
+            // 
+            // Txt_puntoventa
+            // 
+            this.Txt_puntoventa.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.Txt_puntoventa.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Txt_puntoventa.Location = new System.Drawing.Point(165, 58);
+            this.Txt_puntoventa.Name = "Txt_puntoventa";
+            this.Txt_puntoventa.ReadOnly = true;
+            this.Txt_puntoventa.Size = new System.Drawing.Size(256, 22);
+            this.Txt_puntoventa.TabIndex = 17;
+            this.Txt_puntoventa.Text = "Punto de venta x";
+            this.Txt_puntoventa.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.label2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label2.Location = new System.Drawing.Point(43, 63);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(120, 14);
+            this.label2.TabIndex = 16;
+            this.label2.Text = "PUNTO DE VENTA:";
             // 
             // panel2
             // 
@@ -143,130 +272,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "DATOS ACTUALES DEL TURNO";
             // 
-            // Txt_puntoventa
-            // 
-            this.Txt_puntoventa.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.Txt_puntoventa.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Txt_puntoventa.Location = new System.Drawing.Point(165, 58);
-            this.Txt_puntoventa.Name = "Txt_puntoventa";
-            this.Txt_puntoventa.ReadOnly = true;
-            this.Txt_puntoventa.Size = new System.Drawing.Size(224, 22);
-            this.Txt_puntoventa.TabIndex = 17;
-            this.Txt_puntoventa.Text = "Punto de venta x";
-            this.Txt_puntoventa.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.label2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label2.Location = new System.Drawing.Point(43, 63);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(120, 14);
-            this.label2.TabIndex = 16;
-            this.label2.Text = "PUNTO DE VENTA:";
-            // 
-            // Txt_fecha_trabajo
-            // 
-            this.Txt_fecha_trabajo.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.Txt_fecha_trabajo.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Txt_fecha_trabajo.Location = new System.Drawing.Point(165, 94);
-            this.Txt_fecha_trabajo.Name = "Txt_fecha_trabajo";
-            this.Txt_fecha_trabajo.ReadOnly = true;
-            this.Txt_fecha_trabajo.Size = new System.Drawing.Size(224, 22);
-            this.Txt_fecha_trabajo.TabIndex = 19;
-            this.Txt_fecha_trabajo.Text = "Fecha trabajo x";
-            this.Txt_fecha_trabajo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.label4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label4.Location = new System.Drawing.Point(26, 99);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(137, 14);
-            this.label4.TabIndex = 18;
-            this.label4.Text = "FECHA DE TRABAJO:";
-            // 
-            // Txt_turno
-            // 
-            this.Txt_turno.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.Txt_turno.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Txt_turno.Location = new System.Drawing.Point(165, 129);
-            this.Txt_turno.Name = "Txt_turno";
-            this.Txt_turno.ReadOnly = true;
-            this.Txt_turno.Size = new System.Drawing.Size(224, 22);
-            this.Txt_turno.TabIndex = 21;
-            this.Txt_turno.Text = "Turno x";
-            this.Txt_turno.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.label5.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label5.Location = new System.Drawing.Point(107, 134);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(56, 14);
-            this.label5.TabIndex = 20;
-            this.label5.Text = "TURNO:";
-            // 
-            // Txt_estado
-            // 
-            this.Txt_estado.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.Txt_estado.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Txt_estado.Location = new System.Drawing.Point(165, 162);
-            this.Txt_estado.Name = "Txt_estado";
-            this.Txt_estado.ReadOnly = true;
-            this.Txt_estado.Size = new System.Drawing.Size(224, 22);
-            this.Txt_estado.TabIndex = 23;
-            this.Txt_estado.Text = "Estado x";
-            this.Txt_estado.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.label6.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label6.Location = new System.Drawing.Point(46, 167);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(117, 14);
-            this.label6.TabIndex = 22;
-            this.label6.Text = "ESTADO ACTUAL:";
-            // 
-            // Btn_abrirturno
-            // 
-            this.Btn_abrirturno.BackColor = System.Drawing.Color.SeaGreen;
-            this.Btn_abrirturno.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Btn_abrirturno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_abrirturno.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_abrirturno.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.Btn_abrirturno.Location = new System.Drawing.Point(29, 200);
-            this.Btn_abrirturno.Name = "Btn_abrirturno";
-            this.Btn_abrirturno.Size = new System.Drawing.Size(187, 38);
-            this.Btn_abrirturno.TabIndex = 24;
-            this.Btn_abrirturno.Text = "Abrir siguiente turno";
-            this.Btn_abrirturno.UseVisualStyleBackColor = false;
-            // 
-            // Btn_cerrarturno
-            // 
-            this.Btn_cerrarturno.BackColor = System.Drawing.Color.DimGray;
-            this.Btn_cerrarturno.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Btn_cerrarturno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_cerrarturno.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_cerrarturno.ForeColor = System.Drawing.SystemColors.Info;
-            this.Btn_cerrarturno.Location = new System.Drawing.Point(234, 200);
-            this.Btn_cerrarturno.Name = "Btn_cerrarturno";
-            this.Btn_cerrarturno.Size = new System.Drawing.Size(187, 38);
-            this.Btn_cerrarturno.TabIndex = 25;
-            this.Btn_cerrarturno.Text = "Cerrar turno";
-            this.Btn_cerrarturno.UseVisualStyleBackColor = false;
-            // 
             // Frm_Cierres_Turnos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -277,6 +282,7 @@
             this.Controls.Add(this.Pnl_titulo_form);
             this.Name = "Frm_Cierres_Turnos";
             this.Text = "Frm_Cierres_Turnos";
+            this.Load += new System.EventHandler(this.Frm_Cierres_Turnos_Load);
             this.Pnl_titulo_form.ResumeLayout(false);
             this.Pnl_titulo_form.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_1)).EndInit();
