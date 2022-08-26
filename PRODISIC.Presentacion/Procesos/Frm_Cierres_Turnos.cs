@@ -70,7 +70,7 @@ namespace PRODISIC.Presentacion.Procesos
             if (Tablax.Rows.Count > 0)
             {
                 string cFecha_ct = Convert.ToString(Tablax.Rows[0][0]);
-                Txt_fecha_trabajo.Text = cFecha_ct.Substring(0, cFecha_ct.Length - 8);
+                Txt_fecha_trabajo.Text = cFecha_ct.Substring(0, cFecha_ct.Length - 4);
                 this.nCodigo_tu = Convert.ToInt32(Tablax.Rows[0][1]);
                 Txt_turno.Text = Convert.ToString(Tablax.Rows[0][2]);
                 this.nCodigo_pv = Convert.ToInt32(Tablax.Rows[0][5]);
@@ -133,7 +133,7 @@ namespace PRODISIC.Presentacion.Procesos
                         string cFecha_ct = Txt_fecha_trabajo.Text.Trim();
                         if (cFecha_ct == string.Empty) //se asigna fecha de hoy y turno 1 en caso que no tenga historial de cierre
                         {
-                            cFecha_ct = DateTime.Now.ToString("dd-MM-yyyy");
+                            cFecha_ct = DateTime.Now.ToString("dd-MM-yyyy");  //dd-MM-yyyy
                             this.nCodigo_tu = 1;
                         }
                         else
