@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -70,7 +71,7 @@ namespace PRODISIC.Presentacion.Procesos
             if (Tablax.Rows.Count > 0)
             {
                 string cFecha_ct = Convert.ToString(Tablax.Rows[0][0]);
-                Txt_fecha_trabajo.Text = cFecha_ct.Substring(0, cFecha_ct.Length - 4);
+                Txt_fecha_trabajo.Text = cFecha_ct.Substring(0);//, cFecha_ct.Length - 1); <-- Esto me causaba el error de conversion
                 this.nCodigo_tu = Convert.ToInt32(Tablax.Rows[0][1]);
                 Txt_turno.Text = Convert.ToString(Tablax.Rows[0][2]);
                 this.nCodigo_pv = Convert.ToInt32(Tablax.Rows[0][5]);

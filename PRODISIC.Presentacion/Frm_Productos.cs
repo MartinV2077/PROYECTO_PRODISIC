@@ -388,7 +388,7 @@ namespace PRODISIC.Presentacion
             this.Estado_BotonesProcesos(true);
             this.Limpia_Texto();
             this.Estado_Texto(true);
-            this.Puntos_Ventas_OK(this.Estadoguarda, this.nCodigo);
+            this.Puntos_Ventas_OK(this.Estadoguarda, 0);
             this.Mostrar_img_prod_pred();
             this.nCodigo = 0;
             this.nCodigo_ma = 0;

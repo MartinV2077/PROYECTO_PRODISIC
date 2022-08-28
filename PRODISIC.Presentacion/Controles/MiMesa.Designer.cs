@@ -133,6 +133,7 @@
             this.Pct_imagenmesa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Pct_imagenmesa.TabIndex = 0;
             this.Pct_imagenmesa.TabStop = false;
+            this.Pct_imagenmesa.Click += new System.EventHandler(this.Pct_imagenmesa_Click);
             // 
             // MiMesa
             // 

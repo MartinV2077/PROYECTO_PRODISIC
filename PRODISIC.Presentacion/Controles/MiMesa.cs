@@ -61,5 +61,22 @@ namespace PRODISIC.Presentacion.Controles
             set { Lbl_codigo_tu.Text = Convert.ToString(value); }
         }
         #endregion
+
+        private void Pct_imagenmesa_Click(object sender, EventArgs e)
+        {
+            Procesos.Frm_Mesa_Abierta oFrm_mesaabierta = new Procesos.Frm_Mesa_Abierta();
+            oFrm_mesaabierta.Txt_mesaseleccionada.Text = Descripcion;
+            oFrm_mesaabierta.Txt_puntoventa.Text = Descripcion_pv;
+            oFrm_mesaabierta.Btn_nuevopedido.Focus();
+            oFrm_mesaabierta.Dgv_listado_sf.DataSource = N_MesaAbierta.Listar_Subfamilias_RP(Codigo_pv);
+            
+
+            //dando formato al DataGridView de subfamilias
+            oFrm_mesaabierta.Dgv_listado_sf.Columns[0].Width = 250;
+            oFrm_mesaabierta.Dgv_listado_sf.Columns[0].HeaderText = "SUBFAMILIAS";
+            oFrm_mesaabierta.Dgv_listado_sf.Columns[1].Visible = false;
+            oFrm_mesaabierta.ShowDialog();
+
+        }
     }
 }

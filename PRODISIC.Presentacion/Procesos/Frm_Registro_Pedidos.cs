@@ -94,7 +94,7 @@ namespace PRODISIC.Presentacion.Procesos
             if (Tablax.Rows.Count > 0)
             {
                 string cFecha_ct = Convert.ToString(Tablax.Rows[0][0]);
-                Txt_fechatrabajo.Text = cFecha_ct.Substring(0, cFecha_ct.Length - 4);
+                Txt_fechatrabajo.Text = cFecha_ct.Substring(0);//, cFecha_ct.Length - 1); <-- Esto me causaba el error de conversion
                 this.nCodigo_tu = Convert.ToInt32(Tablax.Rows[0][1]);
                 Txt_turno.Text = Convert.ToString(Tablax.Rows[0][2]);
                 Txt_estado.Text = Convert.ToString(Tablax.Rows[0][4]);
