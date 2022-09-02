@@ -32,6 +32,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Mesa_Abierta));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Pnl_titulo_form = new System.Windows.Forms.Panel();
@@ -39,6 +41,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.Txt_mesaseleccionada = new System.Windows.Forms.TextBox();
             this.Pnl_superior = new System.Windows.Forms.Panel();
+            this.Lbl_codigo_pv = new System.Windows.Forms.Label();
             this.Btn_visualizarpedido = new System.Windows.Forms.Button();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.Btn_nuevopedido = new System.Windows.Forms.Button();
@@ -82,6 +85,22 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.Lbl_archivo_txt = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.Pnl_observacion = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.Btn_retornar_obs = new System.Windows.Forms.Button();
+            this.Txt_observacion = new System.Windows.Forms.TextBox();
+            this.Pnl_busqueda_pr = new System.Windows.Forms.Panel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
+            this.Btn_retornar_pr = new System.Windows.Forms.Button();
+            this.Dgv_1 = new System.Windows.Forms.DataGridView();
+            this.Btn_buscar_pr = new System.Windows.Forms.Button();
+            this.Txt_buscar_pr = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
             this.Pnl_titulo_form.SuspendLayout();
             this.Pnl_superior.SuspendLayout();
             this.Tbc_principal.SuspendLayout();
@@ -92,6 +111,11 @@
             this.Pnl_pedido.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_detalle)).BeginInit();
             this.panel1.SuspendLayout();
+            this.Pnl_observacion.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.Pnl_busqueda_pr.SuspendLayout();
+            this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Dgv_1)).BeginInit();
             this.SuspendLayout();
             // 
             // Pnl_titulo_form
@@ -142,6 +166,8 @@
             // Pnl_superior
             // 
             this.Pnl_superior.BackColor = System.Drawing.Color.OrangeRed;
+            this.Pnl_superior.Controls.Add(this.Lbl_archivo_txt);
+            this.Pnl_superior.Controls.Add(this.Lbl_codigo_pv);
             this.Pnl_superior.Controls.Add(this.Btn_visualizarpedido);
             this.Pnl_superior.Controls.Add(this.Btn_nuevopedido);
             this.Pnl_superior.Controls.Add(this.Btn_salir);
@@ -154,6 +180,15 @@
             this.Pnl_superior.Name = "Pnl_superior";
             this.Pnl_superior.Size = new System.Drawing.Size(1284, 89);
             this.Pnl_superior.TabIndex = 11;
+            // 
+            // Lbl_codigo_pv
+            // 
+            this.Lbl_codigo_pv.Location = new System.Drawing.Point(460, 39);
+            this.Lbl_codigo_pv.Name = "Lbl_codigo_pv";
+            this.Lbl_codigo_pv.Size = new System.Drawing.Size(44, 29);
+            this.Lbl_codigo_pv.TabIndex = 20;
+            this.Lbl_codigo_pv.Text = "Lbl_codigo_pv";
+            this.Lbl_codigo_pv.Visible = false;
             // 
             // Btn_visualizarpedido
             // 
@@ -175,6 +210,7 @@
             this.Btn_visualizarpedido.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.Btn_visualizarpedido.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.Btn_visualizarpedido.UseVisualStyleBackColor = false;
+            this.Btn_visualizarpedido.Click += new System.EventHandler(this.Btn_visualizarpedido_Click);
             // 
             // imageList1
             // 
@@ -210,6 +246,7 @@
             this.Btn_nuevopedido.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.Btn_nuevopedido.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.Btn_nuevopedido.UseVisualStyleBackColor = false;
+            this.Btn_nuevopedido.Click += new System.EventHandler(this.Btn_nuevopedido_Click);
             // 
             // Btn_salir
             // 
@@ -231,6 +268,7 @@
             this.Btn_salir.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.Btn_salir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.Btn_salir.UseVisualStyleBackColor = false;
+            this.Btn_salir.Click += new System.EventHandler(this.Btn_salir_Click);
             // 
             // Txt_puntoventa
             // 
@@ -283,6 +321,7 @@
             // 
             // Flp_listadoproductos
             // 
+            this.Flp_listadoproductos.AutoScroll = true;
             this.Flp_listadoproductos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Flp_listadoproductos.Location = new System.Drawing.Point(763, 39);
             this.Flp_listadoproductos.Name = "Flp_listadoproductos";
@@ -348,9 +387,12 @@
             this.Dgv_listado_sf.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.Dgv_listado_sf.Size = new System.Drawing.Size(224, 440);
             this.Dgv_listado_sf.TabIndex = 13;
+            this.Dgv_listado_sf.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_listado_sf_CellClick);
             // 
             // Pnl_pedido
             // 
+            this.Pnl_pedido.Controls.Add(this.Pnl_busqueda_pr);
+            this.Pnl_pedido.Controls.Add(this.Pnl_observacion);
             this.Pnl_pedido.Controls.Add(this.Btn_generarcomanda);
             this.Pnl_pedido.Controls.Add(this.Btn_cancelar);
             this.Pnl_pedido.Controls.Add(this.label8);
@@ -441,30 +483,33 @@
             this.Dgv_detalle.AllowUserToAddRows = false;
             this.Dgv_detalle.AllowUserToDeleteRows = false;
             this.Dgv_detalle.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Lavender;
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            this.Dgv_detalle.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.Lavender;
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            this.Dgv_detalle.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.Dgv_detalle.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.Dgv_detalle.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.Info;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Dgv_detalle.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.Info;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Dgv_detalle.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.Dgv_detalle.ColumnHeadersHeight = 34;
             this.Dgv_detalle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.Dgv_detalle.EnableHeadersVisualStyles = false;
-            this.Dgv_detalle.Location = new System.Drawing.Point(9, 263);
+            this.Dgv_detalle.Location = new System.Drawing.Point(15, 260);
             this.Dgv_detalle.Name = "Dgv_detalle";
             this.Dgv_detalle.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.Dgv_detalle.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.Dgv_detalle.Size = new System.Drawing.Size(515, 180);
             this.Dgv_detalle.TabIndex = 44;
+            this.Dgv_detalle.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_detalle_CellDoubleClick);
             // 
             // Btn_busquedarapida
             // 
+            this.Btn_busquedarapida.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Btn_busquedarapida.FlatAppearance.BorderColor = System.Drawing.Color.CornflowerBlue;
             this.Btn_busquedarapida.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btn_busquedarapida.Image = ((System.Drawing.Image)(resources.GetObject("Btn_busquedarapida.Image")));
@@ -473,6 +518,7 @@
             this.Btn_busquedarapida.Size = new System.Drawing.Size(60, 47);
             this.Btn_busquedarapida.TabIndex = 43;
             this.Btn_busquedarapida.UseVisualStyleBackColor = true;
+            this.Btn_busquedarapida.Click += new System.EventHandler(this.Btn_busquedarapida_Click);
             // 
             // Btn_quitarproducto
             // 
@@ -487,6 +533,7 @@
             this.Btn_quitarproducto.TabIndex = 42;
             this.Btn_quitarproducto.Text = "Quitar producto";
             this.Btn_quitarproducto.UseVisualStyleBackColor = false;
+            this.Btn_quitarproducto.Click += new System.EventHandler(this.Btn_quitarproducto_Click);
             // 
             // Btn_actualizar_cantidad
             // 
@@ -501,6 +548,7 @@
             this.Btn_actualizar_cantidad.TabIndex = 41;
             this.Btn_actualizar_cantidad.Text = "Actualizar cantidad producto";
             this.Btn_actualizar_cantidad.UseVisualStyleBackColor = false;
+            this.Btn_actualizar_cantidad.Click += new System.EventHandler(this.Btn_actualizar_cantidad_Click);
             // 
             // Lbl_cantidad
             // 
@@ -526,6 +574,7 @@
             this.Btn_C.TabIndex = 39;
             this.Btn_C.Text = "C";
             this.Btn_C.UseVisualStyleBackColor = false;
+            this.Btn_C.Click += new System.EventHandler(this.Btn_C_Click);
             // 
             // Btn_0
             // 
@@ -539,6 +588,7 @@
             this.Btn_0.TabIndex = 38;
             this.Btn_0.Text = "0";
             this.Btn_0.UseVisualStyleBackColor = false;
+            this.Btn_0.Click += new System.EventHandler(this.Btn_0_Click);
             // 
             // Btn_2
             // 
@@ -552,6 +602,7 @@
             this.Btn_2.TabIndex = 37;
             this.Btn_2.Text = "2";
             this.Btn_2.UseVisualStyleBackColor = false;
+            this.Btn_2.Click += new System.EventHandler(this.Btn_2_Click);
             // 
             // Btn_3
             // 
@@ -565,6 +616,7 @@
             this.Btn_3.TabIndex = 36;
             this.Btn_3.Text = "3";
             this.Btn_3.UseVisualStyleBackColor = false;
+            this.Btn_3.Click += new System.EventHandler(this.Btn_3_Click);
             // 
             // Btn_4
             // 
@@ -578,6 +630,7 @@
             this.Btn_4.TabIndex = 35;
             this.Btn_4.Text = "4";
             this.Btn_4.UseVisualStyleBackColor = false;
+            this.Btn_4.Click += new System.EventHandler(this.Btn_4_Click);
             // 
             // Btn_5
             // 
@@ -591,6 +644,7 @@
             this.Btn_5.TabIndex = 34;
             this.Btn_5.Text = "5";
             this.Btn_5.UseVisualStyleBackColor = false;
+            this.Btn_5.Click += new System.EventHandler(this.Btn_5_Click);
             // 
             // Btn_6
             // 
@@ -604,6 +658,7 @@
             this.Btn_6.TabIndex = 33;
             this.Btn_6.Text = "6";
             this.Btn_6.UseVisualStyleBackColor = false;
+            this.Btn_6.Click += new System.EventHandler(this.Btn_6_Click);
             // 
             // Btn_7
             // 
@@ -617,6 +672,7 @@
             this.Btn_7.TabIndex = 32;
             this.Btn_7.Text = "7";
             this.Btn_7.UseVisualStyleBackColor = false;
+            this.Btn_7.Click += new System.EventHandler(this.Btn_7_Click);
             // 
             // Btn_8
             // 
@@ -630,6 +686,7 @@
             this.Btn_8.TabIndex = 31;
             this.Btn_8.Text = "8";
             this.Btn_8.UseVisualStyleBackColor = false;
+            this.Btn_8.Click += new System.EventHandler(this.Btn_8_Click);
             // 
             // Btn_9
             // 
@@ -643,6 +700,7 @@
             this.Btn_9.TabIndex = 30;
             this.Btn_9.Text = "9";
             this.Btn_9.UseVisualStyleBackColor = false;
+            this.Btn_9.Click += new System.EventHandler(this.Btn_9_Click);
             // 
             // Btn_1
             // 
@@ -656,6 +714,7 @@
             this.Btn_1.TabIndex = 29;
             this.Btn_1.Text = "1";
             this.Btn_1.UseVisualStyleBackColor = false;
+            this.Btn_1.Click += new System.EventHandler(this.Btn_1_Click);
             // 
             // Chk_manual
             // 
@@ -749,6 +808,195 @@
             this.tabPage2.Text = "Visualizar pedidos";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // Lbl_archivo_txt
+            // 
+            this.Lbl_archivo_txt.Location = new System.Drawing.Point(460, 7);
+            this.Lbl_archivo_txt.Name = "Lbl_archivo_txt";
+            this.Lbl_archivo_txt.Size = new System.Drawing.Size(44, 29);
+            this.Lbl_archivo_txt.TabIndex = 21;
+            this.Lbl_archivo_txt.Text = "Lbl_archivo_txt";
+            this.Lbl_archivo_txt.Visible = false;
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // Pnl_observacion
+            // 
+            this.Pnl_observacion.Controls.Add(this.Txt_observacion);
+            this.Pnl_observacion.Controls.Add(this.Btn_retornar_obs);
+            this.Pnl_observacion.Controls.Add(this.panel4);
+            this.Pnl_observacion.Location = new System.Drawing.Point(39, 276);
+            this.Pnl_observacion.Name = "Pnl_observacion";
+            this.Pnl_observacion.Size = new System.Drawing.Size(444, 167);
+            this.Pnl_observacion.TabIndex = 49;
+            this.Pnl_observacion.Visible = false;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.panel4.Controls.Add(this.label9);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(444, 36);
+            this.panel4.TabIndex = 10;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.label9.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.label9.Location = new System.Drawing.Point(28, 9);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(142, 17);
+            this.label9.TabIndex = 0;
+            this.label9.Text = "OBSERVACIONES";
+            // 
+            // Btn_retornar_obs
+            // 
+            this.Btn_retornar_obs.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.Btn_retornar_obs.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.Btn_retornar_obs.FlatAppearance.BorderColor = System.Drawing.Color.CornflowerBlue;
+            this.Btn_retornar_obs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_retornar_obs.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_retornar_obs.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.Btn_retornar_obs.Location = new System.Drawing.Point(0, 137);
+            this.Btn_retornar_obs.Name = "Btn_retornar_obs";
+            this.Btn_retornar_obs.Size = new System.Drawing.Size(444, 30);
+            this.Btn_retornar_obs.TabIndex = 48;
+            this.Btn_retornar_obs.Text = "RETORNAR";
+            this.Btn_retornar_obs.UseVisualStyleBackColor = false;
+            this.Btn_retornar_obs.Click += new System.EventHandler(this.Btn_retornar_obs_Click);
+            // 
+            // Txt_observacion
+            // 
+            this.Txt_observacion.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Txt_observacion.Location = new System.Drawing.Point(0, 36);
+            this.Txt_observacion.Multiline = true;
+            this.Txt_observacion.Name = "Txt_observacion";
+            this.Txt_observacion.Size = new System.Drawing.Size(444, 101);
+            this.Txt_observacion.TabIndex = 49;
+            // 
+            // Pnl_busqueda_pr
+            // 
+            this.Pnl_busqueda_pr.Controls.Add(this.Btn_retornar_pr);
+            this.Pnl_busqueda_pr.Controls.Add(this.Dgv_1);
+            this.Pnl_busqueda_pr.Controls.Add(this.Btn_buscar_pr);
+            this.Pnl_busqueda_pr.Controls.Add(this.Txt_buscar_pr);
+            this.Pnl_busqueda_pr.Controls.Add(this.label17);
+            this.Pnl_busqueda_pr.Controls.Add(this.textBox1);
+            this.Pnl_busqueda_pr.Controls.Add(this.panel6);
+            this.Pnl_busqueda_pr.Location = new System.Drawing.Point(18, 127);
+            this.Pnl_busqueda_pr.Name = "Pnl_busqueda_pr";
+            this.Pnl_busqueda_pr.Size = new System.Drawing.Size(509, 182);
+            this.Pnl_busqueda_pr.TabIndex = 50;
+            this.Pnl_busqueda_pr.Visible = false;
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox1.Location = new System.Drawing.Point(0, 36);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(509, 146);
+            this.textBox1.TabIndex = 49;
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.SeaGreen;
+            this.panel6.Controls.Add(this.label10);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel6.Location = new System.Drawing.Point(0, 0);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(509, 36);
+            this.panel6.TabIndex = 10;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.SeaGreen;
+            this.label10.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.label10.Location = new System.Drawing.Point(28, 9);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(232, 17);
+            this.label10.TabIndex = 0;
+            this.label10.Text = "Busqueda rapida de productos";
+            // 
+            // Btn_retornar_pr
+            // 
+            this.Btn_retornar_pr.FlatAppearance.BorderColor = System.Drawing.Color.CornflowerBlue;
+            this.Btn_retornar_pr.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_retornar_pr.Image = ((System.Drawing.Image)(resources.GetObject("Btn_retornar_pr.Image")));
+            this.Btn_retornar_pr.Location = new System.Drawing.Point(285, 42);
+            this.Btn_retornar_pr.Name = "Btn_retornar_pr";
+            this.Btn_retornar_pr.Size = new System.Drawing.Size(34, 27);
+            this.Btn_retornar_pr.TabIndex = 54;
+            this.Btn_retornar_pr.UseVisualStyleBackColor = true;
+            this.Btn_retornar_pr.Click += new System.EventHandler(this.Btn_retornar_pr_Click);
+            // 
+            // Dgv_1
+            // 
+            this.Dgv_1.AllowUserToAddRows = false;
+            this.Dgv_1.AllowUserToDeleteRows = false;
+            this.Dgv_1.AllowUserToOrderColumns = true;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Lavender;
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            this.Dgv_1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.Dgv_1.BackgroundColor = System.Drawing.SystemColors.Menu;
+            this.Dgv_1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.Dgv_1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.Info;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Dgv_1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.Dgv_1.ColumnHeadersHeight = 34;
+            this.Dgv_1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.Dgv_1.EnableHeadersVisualStyles = false;
+            this.Dgv_1.Location = new System.Drawing.Point(3, 75);
+            this.Dgv_1.Name = "Dgv_1";
+            this.Dgv_1.ReadOnly = true;
+            this.Dgv_1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.Dgv_1.Size = new System.Drawing.Size(503, 104);
+            this.Dgv_1.TabIndex = 53;
+            this.Dgv_1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_1_CellDoubleClick);
+            // 
+            // Btn_buscar_pr
+            // 
+            this.Btn_buscar_pr.FlatAppearance.BorderColor = System.Drawing.Color.CornflowerBlue;
+            this.Btn_buscar_pr.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_buscar_pr.Image = ((System.Drawing.Image)(resources.GetObject("Btn_buscar_pr.Image")));
+            this.Btn_buscar_pr.Location = new System.Drawing.Point(245, 42);
+            this.Btn_buscar_pr.Name = "Btn_buscar_pr";
+            this.Btn_buscar_pr.Size = new System.Drawing.Size(34, 27);
+            this.Btn_buscar_pr.TabIndex = 52;
+            this.Btn_buscar_pr.UseVisualStyleBackColor = true;
+            this.Btn_buscar_pr.Click += new System.EventHandler(this.Btn_buscar_pr_Click);
+            // 
+            // Txt_buscar_pr
+            // 
+            this.Txt_buscar_pr.Location = new System.Drawing.Point(73, 46);
+            this.Txt_buscar_pr.Name = "Txt_buscar_pr";
+            this.Txt_buscar_pr.Size = new System.Drawing.Size(166, 20);
+            this.Txt_buscar_pr.TabIndex = 51;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(27, 49);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(40, 13);
+            this.label17.TabIndex = 50;
+            this.label17.Text = "Buscar";
+            // 
             // Frm_Mesa_Abierta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -760,6 +1008,7 @@
             this.Name = "Frm_Mesa_Abierta";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Frm_Mesa";
+            this.Load += new System.EventHandler(this.Frm_Mesa_Abierta_Load);
             this.Pnl_titulo_form.ResumeLayout(false);
             this.Pnl_titulo_form.PerformLayout();
             this.Pnl_superior.ResumeLayout(false);
@@ -775,6 +1024,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_detalle)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.Pnl_observacion.ResumeLayout(false);
+            this.Pnl_observacion.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            this.Pnl_busqueda_pr.ResumeLayout(false);
+            this.Pnl_busqueda_pr.PerformLayout();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Dgv_1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -829,5 +1087,22 @@
         internal System.Windows.Forms.Button Btn_nuevopedido;
         internal System.Windows.Forms.Button Btn_salir;
         internal System.Windows.Forms.DataGridView Dgv_listado_sf;
+        internal System.Windows.Forms.Label Lbl_codigo_pv;
+        internal System.Windows.Forms.Label Lbl_archivo_txt;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Panel Pnl_observacion;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox Txt_observacion;
+        private System.Windows.Forms.Button Btn_retornar_obs;
+        private System.Windows.Forms.Panel Pnl_busqueda_pr;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Button Btn_retornar_pr;
+        private System.Windows.Forms.DataGridView Dgv_1;
+        private System.Windows.Forms.Button Btn_buscar_pr;
+        private System.Windows.Forms.TextBox Txt_buscar_pr;
+        private System.Windows.Forms.Label label17;
     }
 }

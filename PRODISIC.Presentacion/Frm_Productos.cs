@@ -103,7 +103,7 @@ namespace PRODISIC.Presentacion
             }
         }
 
-       private void Listado_ma(string cTexto)
+        private void Listado_ma(string cTexto)
         {
             try
             {
@@ -569,7 +569,7 @@ namespace PRODISIC.Presentacion
         {
             this.Selecciona_item_ma();
             Pnl_Listado_1.Visible = false;
-            Txt_observacion.Focus();
+            //Txt_observacion.Focus();
         }
 
         private void Btn_retornar1_Click(object sender, EventArgs e)
@@ -577,9 +577,9 @@ namespace PRODISIC.Presentacion
             Pnl_Listado_1.Visible = false;
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void Btn_buscar1_Click(object sender, EventArgs e)
         {
-            //this.Listado_fa(Txt_buscar1.Text.Trim());
+            this.Listado_ma(Txt_buscar1.Text.Trim());
         }
 
         private void Btn_lupa1_Click(object sender, EventArgs e)

@@ -67,15 +67,23 @@ namespace PRODISIC.Presentacion.Controles
             Procesos.Frm_Mesa_Abierta oFrm_mesaabierta = new Procesos.Frm_Mesa_Abierta();
             oFrm_mesaabierta.Txt_mesaseleccionada.Text = Descripcion;
             oFrm_mesaabierta.Txt_puntoventa.Text = Descripcion_pv;
+            oFrm_mesaabierta.Lbl_codigo_pv.Text = Convert.ToString(Codigo_pv);
+            oFrm_mesaabierta.Lbl_archivo_txt.Text = Convert.ToString(DateTime.Now.Ticks);
             oFrm_mesaabierta.Btn_nuevopedido.Focus();
-            oFrm_mesaabierta.Dgv_listado_sf.DataSource = N_MesaAbierta.Listar_Subfamilias_RP(Codigo_pv);
-            
+            try
+            {
+                oFrm_mesaabierta.Dgv_listado_sf.DataSource = N_MesaAbierta.Listar_Subfamilias_RP(Codigo_pv);
+                //Dando formato al datagridview de SubFamilia
+                oFrm_mesaabierta.Dgv_listado_sf.Columns[0].Width = 250;
+                oFrm_mesaabierta.Dgv_listado_sf.Columns[0].HeaderText = "SUBFAMILIAS";
+                oFrm_mesaabierta.Dgv_listado_sf.Columns[1].Visible = false;
 
-            //dando formato al DataGridView de subfamilias
-            oFrm_mesaabierta.Dgv_listado_sf.Columns[0].Width = 250;
-            oFrm_mesaabierta.Dgv_listado_sf.Columns[0].HeaderText = "SUBFAMILIAS";
-            oFrm_mesaabierta.Dgv_listado_sf.Columns[1].Visible = false;
-            oFrm_mesaabierta.ShowDialog();
+                oFrm_mesaabierta.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
 
         }
     }

@@ -19,6 +19,17 @@ namespace PRODISIC.Negocio
             return Datos.Listar_Subfamilias_RP(nCodigo_pv);
         }
 
-     
+        public static DataTable ListarProductos_SubFamilias_RP(int nCodigo_pv, int nCodigo_sf)
+        {
+            D_MesaAbierta Datos = new D_MesaAbierta();
+            return Datos.ListarProductos_SubFamilias_RP(nCodigo_pv, nCodigo_sf);
+        }
+
+        public static DataTable Busquedarapida_pr(string cTexto)
+        {
+            D_MesaAbierta Datos = new D_MesaAbierta();
+            return Datos.Busquedarapida_pr(cTexto);
+        }
+
     }
 }
