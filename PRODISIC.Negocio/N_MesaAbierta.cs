@@ -31,5 +31,23 @@ namespace PRODISIC.Negocio
             return Datos.Busquedarapida_pr(cTexto);
         }
 
+        public static DataTable Busqueda_cl(string cTexto)
+        {
+            D_MesaAbierta Datos = new D_MesaAbierta();
+            return Datos.Busqueda_cl(cTexto);
+        }
+
+        public static DataTable Guardar_RP(E_RegistroPedido oRP, DataTable Detalle_ticket)
+        {
+            D_MesaAbierta Datos = new D_MesaAbierta();
+            return Datos.Guardar_RP(oRP, Detalle_ticket);
+        }
+
+       public static DataTable Imprimir_comanda(string cImpresora, int nCodigo_ti)
+        {
+            D_MesaAbierta Datos = new D_MesaAbierta();
+            return Datos.Imprimir_comanda(cImpresora, nCodigo_ti);
+        }
+
     }
 }

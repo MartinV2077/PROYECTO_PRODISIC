@@ -30,17 +30,20 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Mesa_Abierta));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Pnl_titulo_form = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.Txt_mesaseleccionada = new System.Windows.Forms.TextBox();
             this.Pnl_superior = new System.Windows.Forms.Panel();
+            this.Lbl_archivo_txt = new System.Windows.Forms.Label();
             this.Lbl_codigo_pv = new System.Windows.Forms.Label();
             this.Btn_visualizarpedido = new System.Windows.Forms.Button();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
@@ -56,6 +59,29 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.Dgv_listado_sf = new System.Windows.Forms.DataGridView();
             this.Pnl_pedido = new System.Windows.Forms.Panel();
+            this.Pnl_busqueda_cl = new System.Windows.Forms.Panel();
+            this.Btn_retornar_cl = new System.Windows.Forms.Button();
+            this.Dgv_2 = new System.Windows.Forms.DataGridView();
+            this.Btn_buscar_cl = new System.Windows.Forms.Button();
+            this.Txt_buscar_cl = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.label12 = new System.Windows.Forms.Label();
+            this.Pnl_busqueda_pr = new System.Windows.Forms.Panel();
+            this.Btn_retornar_pr = new System.Windows.Forms.Button();
+            this.Dgv_1 = new System.Windows.Forms.DataGridView();
+            this.Btn_buscar_pr = new System.Windows.Forms.Button();
+            this.Txt_buscar_pr = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
+            this.Pnl_observacion = new System.Windows.Forms.Panel();
+            this.Txt_observacion = new System.Windows.Forms.TextBox();
+            this.Btn_retornar_obs = new System.Windows.Forms.Button();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
             this.Btn_generarcomanda = new System.Windows.Forms.Button();
             this.Btn_cancelar = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
@@ -85,22 +111,11 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.Lbl_archivo_txt = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.Pnl_observacion = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.label9 = new System.Windows.Forms.Label();
-            this.Btn_retornar_obs = new System.Windows.Forms.Button();
-            this.Txt_observacion = new System.Windows.Forms.TextBox();
-            this.Pnl_busqueda_pr = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.label10 = new System.Windows.Forms.Label();
-            this.Btn_retornar_pr = new System.Windows.Forms.Button();
-            this.Dgv_1 = new System.Windows.Forms.DataGridView();
-            this.Btn_buscar_pr = new System.Windows.Forms.Button();
-            this.Txt_buscar_pr = new System.Windows.Forms.TextBox();
-            this.label17 = new System.Windows.Forms.Label();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.Lbl_codigo_me = new System.Windows.Forms.Label();
+            this.Lbl_codigo_tu = new System.Windows.Forms.Label();
+            this.Lbl_fecha_trabajo = new System.Windows.Forms.Label();
             this.Pnl_titulo_form.SuspendLayout();
             this.Pnl_superior.SuspendLayout();
             this.Tbc_principal.SuspendLayout();
@@ -109,13 +124,16 @@
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_listado_sf)).BeginInit();
             this.Pnl_pedido.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Dgv_detalle)).BeginInit();
-            this.panel1.SuspendLayout();
+            this.Pnl_busqueda_cl.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Dgv_2)).BeginInit();
+            this.panel7.SuspendLayout();
+            this.Pnl_busqueda_pr.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Dgv_1)).BeginInit();
+            this.panel6.SuspendLayout();
             this.Pnl_observacion.SuspendLayout();
             this.panel4.SuspendLayout();
-            this.Pnl_busqueda_pr.SuspendLayout();
-            this.panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Dgv_1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Dgv_detalle)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // Pnl_titulo_form
@@ -166,6 +184,9 @@
             // Pnl_superior
             // 
             this.Pnl_superior.BackColor = System.Drawing.Color.OrangeRed;
+            this.Pnl_superior.Controls.Add(this.Lbl_fecha_trabajo);
+            this.Pnl_superior.Controls.Add(this.Lbl_codigo_tu);
+            this.Pnl_superior.Controls.Add(this.Lbl_codigo_me);
             this.Pnl_superior.Controls.Add(this.Lbl_archivo_txt);
             this.Pnl_superior.Controls.Add(this.Lbl_codigo_pv);
             this.Pnl_superior.Controls.Add(this.Btn_visualizarpedido);
@@ -180,6 +201,15 @@
             this.Pnl_superior.Name = "Pnl_superior";
             this.Pnl_superior.Size = new System.Drawing.Size(1284, 89);
             this.Pnl_superior.TabIndex = 11;
+            // 
+            // Lbl_archivo_txt
+            // 
+            this.Lbl_archivo_txt.Location = new System.Drawing.Point(460, 7);
+            this.Lbl_archivo_txt.Name = "Lbl_archivo_txt";
+            this.Lbl_archivo_txt.Size = new System.Drawing.Size(44, 29);
+            this.Lbl_archivo_txt.TabIndex = 21;
+            this.Lbl_archivo_txt.Text = "Lbl_archivo_txt";
+            this.Lbl_archivo_txt.Visible = false;
             // 
             // Lbl_codigo_pv
             // 
@@ -364,20 +394,20 @@
             this.Dgv_listado_sf.AllowUserToAddRows = false;
             this.Dgv_listado_sf.AllowUserToDeleteRows = false;
             this.Dgv_listado_sf.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Lavender;
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            this.Dgv_listado_sf.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.Lavender;
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
+            this.Dgv_listado_sf.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
             this.Dgv_listado_sf.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.Dgv_listado_sf.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.Dgv_listado_sf.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.Info;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Dgv_listado_sf.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.Info;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Dgv_listado_sf.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.Dgv_listado_sf.ColumnHeadersHeight = 34;
             this.Dgv_listado_sf.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.Dgv_listado_sf.EnableHeadersVisualStyles = false;
@@ -391,6 +421,7 @@
             // 
             // Pnl_pedido
             // 
+            this.Pnl_pedido.Controls.Add(this.Pnl_busqueda_cl);
             this.Pnl_pedido.Controls.Add(this.Pnl_busqueda_pr);
             this.Pnl_pedido.Controls.Add(this.Pnl_observacion);
             this.Pnl_pedido.Controls.Add(this.Btn_generarcomanda);
@@ -426,6 +457,298 @@
             this.Pnl_pedido.Size = new System.Drawing.Size(530, 552);
             this.Pnl_pedido.TabIndex = 0;
             // 
+            // Pnl_busqueda_cl
+            // 
+            this.Pnl_busqueda_cl.Controls.Add(this.Btn_retornar_cl);
+            this.Pnl_busqueda_cl.Controls.Add(this.Dgv_2);
+            this.Pnl_busqueda_cl.Controls.Add(this.Btn_buscar_cl);
+            this.Pnl_busqueda_cl.Controls.Add(this.Txt_buscar_cl);
+            this.Pnl_busqueda_cl.Controls.Add(this.label11);
+            this.Pnl_busqueda_cl.Controls.Add(this.textBox3);
+            this.Pnl_busqueda_cl.Controls.Add(this.panel7);
+            this.Pnl_busqueda_cl.Location = new System.Drawing.Point(489, 62);
+            this.Pnl_busqueda_cl.Name = "Pnl_busqueda_cl";
+            this.Pnl_busqueda_cl.Size = new System.Drawing.Size(509, 182);
+            this.Pnl_busqueda_cl.TabIndex = 51;
+            this.Pnl_busqueda_cl.Visible = false;
+            // 
+            // Btn_retornar_cl
+            // 
+            this.Btn_retornar_cl.FlatAppearance.BorderColor = System.Drawing.Color.CornflowerBlue;
+            this.Btn_retornar_cl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_retornar_cl.Image = ((System.Drawing.Image)(resources.GetObject("Btn_retornar_cl.Image")));
+            this.Btn_retornar_cl.Location = new System.Drawing.Point(285, 42);
+            this.Btn_retornar_cl.Name = "Btn_retornar_cl";
+            this.Btn_retornar_cl.Size = new System.Drawing.Size(34, 27);
+            this.Btn_retornar_cl.TabIndex = 54;
+            this.Btn_retornar_cl.UseVisualStyleBackColor = true;
+            this.Btn_retornar_cl.Click += new System.EventHandler(this.Btn_retornar_cl_Click);
+            // 
+            // Dgv_2
+            // 
+            this.Dgv_2.AllowUserToAddRows = false;
+            this.Dgv_2.AllowUserToDeleteRows = false;
+            this.Dgv_2.AllowUserToOrderColumns = true;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.Lavender;
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black;
+            this.Dgv_2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
+            this.Dgv_2.BackgroundColor = System.Drawing.SystemColors.Menu;
+            this.Dgv_2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.Dgv_2.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.Info;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Dgv_2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            this.Dgv_2.ColumnHeadersHeight = 34;
+            this.Dgv_2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.Dgv_2.EnableHeadersVisualStyles = false;
+            this.Dgv_2.Location = new System.Drawing.Point(3, 72);
+            this.Dgv_2.Name = "Dgv_2";
+            this.Dgv_2.ReadOnly = true;
+            this.Dgv_2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.Dgv_2.Size = new System.Drawing.Size(501, 104);
+            this.Dgv_2.TabIndex = 53;
+            this.Dgv_2.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_2_CellDoubleClick);
+            // 
+            // Btn_buscar_cl
+            // 
+            this.Btn_buscar_cl.FlatAppearance.BorderColor = System.Drawing.Color.CornflowerBlue;
+            this.Btn_buscar_cl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_buscar_cl.Image = ((System.Drawing.Image)(resources.GetObject("Btn_buscar_cl.Image")));
+            this.Btn_buscar_cl.Location = new System.Drawing.Point(245, 42);
+            this.Btn_buscar_cl.Name = "Btn_buscar_cl";
+            this.Btn_buscar_cl.Size = new System.Drawing.Size(34, 27);
+            this.Btn_buscar_cl.TabIndex = 52;
+            this.Btn_buscar_cl.UseVisualStyleBackColor = true;
+            this.Btn_buscar_cl.Click += new System.EventHandler(this.Btn_buscar_cl_Click);
+            // 
+            // Txt_buscar_cl
+            // 
+            this.Txt_buscar_cl.Location = new System.Drawing.Point(73, 46);
+            this.Txt_buscar_cl.Name = "Txt_buscar_cl";
+            this.Txt_buscar_cl.Size = new System.Drawing.Size(166, 20);
+            this.Txt_buscar_cl.TabIndex = 51;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(27, 49);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(40, 13);
+            this.label11.TabIndex = 50;
+            this.label11.Text = "Buscar";
+            // 
+            // textBox3
+            // 
+            this.textBox3.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.textBox3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox3.Location = new System.Drawing.Point(0, 36);
+            this.textBox3.Multiline = true;
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(509, 146);
+            this.textBox3.TabIndex = 49;
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.DarkCyan;
+            this.panel7.Controls.Add(this.label12);
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel7.Location = new System.Drawing.Point(0, 0);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(509, 36);
+            this.panel7.TabIndex = 10;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.DarkCyan;
+            this.label12.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.label12.Location = new System.Drawing.Point(35, 10);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(166, 17);
+            this.label12.TabIndex = 0;
+            this.label12.Text = "Busqueda de Clientes";
+            // 
+            // Pnl_busqueda_pr
+            // 
+            this.Pnl_busqueda_pr.Controls.Add(this.Btn_retornar_pr);
+            this.Pnl_busqueda_pr.Controls.Add(this.Dgv_1);
+            this.Pnl_busqueda_pr.Controls.Add(this.Btn_buscar_pr);
+            this.Pnl_busqueda_pr.Controls.Add(this.Txt_buscar_pr);
+            this.Pnl_busqueda_pr.Controls.Add(this.label17);
+            this.Pnl_busqueda_pr.Controls.Add(this.textBox1);
+            this.Pnl_busqueda_pr.Controls.Add(this.panel6);
+            this.Pnl_busqueda_pr.Location = new System.Drawing.Point(13, 263);
+            this.Pnl_busqueda_pr.Name = "Pnl_busqueda_pr";
+            this.Pnl_busqueda_pr.Size = new System.Drawing.Size(509, 182);
+            this.Pnl_busqueda_pr.TabIndex = 50;
+            this.Pnl_busqueda_pr.Visible = false;
+            // 
+            // Btn_retornar_pr
+            // 
+            this.Btn_retornar_pr.FlatAppearance.BorderColor = System.Drawing.Color.CornflowerBlue;
+            this.Btn_retornar_pr.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_retornar_pr.Image = ((System.Drawing.Image)(resources.GetObject("Btn_retornar_pr.Image")));
+            this.Btn_retornar_pr.Location = new System.Drawing.Point(285, 42);
+            this.Btn_retornar_pr.Name = "Btn_retornar_pr";
+            this.Btn_retornar_pr.Size = new System.Drawing.Size(34, 27);
+            this.Btn_retornar_pr.TabIndex = 54;
+            this.Btn_retornar_pr.UseVisualStyleBackColor = true;
+            this.Btn_retornar_pr.Click += new System.EventHandler(this.Btn_retornar_pr_Click);
+            // 
+            // Dgv_1
+            // 
+            this.Dgv_1.AllowUserToAddRows = false;
+            this.Dgv_1.AllowUserToDeleteRows = false;
+            this.Dgv_1.AllowUserToOrderColumns = true;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.Lavender;
+            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.Black;
+            this.Dgv_1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
+            this.Dgv_1.BackgroundColor = System.Drawing.SystemColors.Menu;
+            this.Dgv_1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.Dgv_1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.Info;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Dgv_1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            this.Dgv_1.ColumnHeadersHeight = 34;
+            this.Dgv_1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.Dgv_1.EnableHeadersVisualStyles = false;
+            this.Dgv_1.Location = new System.Drawing.Point(3, 72);
+            this.Dgv_1.Name = "Dgv_1";
+            this.Dgv_1.ReadOnly = true;
+            this.Dgv_1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.Dgv_1.Size = new System.Drawing.Size(503, 104);
+            this.Dgv_1.TabIndex = 53;
+            this.Dgv_1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_1_CellDoubleClick);
+            // 
+            // Btn_buscar_pr
+            // 
+            this.Btn_buscar_pr.FlatAppearance.BorderColor = System.Drawing.Color.CornflowerBlue;
+            this.Btn_buscar_pr.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_buscar_pr.Image = ((System.Drawing.Image)(resources.GetObject("Btn_buscar_pr.Image")));
+            this.Btn_buscar_pr.Location = new System.Drawing.Point(245, 42);
+            this.Btn_buscar_pr.Name = "Btn_buscar_pr";
+            this.Btn_buscar_pr.Size = new System.Drawing.Size(34, 27);
+            this.Btn_buscar_pr.TabIndex = 52;
+            this.Btn_buscar_pr.UseVisualStyleBackColor = true;
+            this.Btn_buscar_pr.Click += new System.EventHandler(this.Btn_buscar_pr_Click);
+            // 
+            // Txt_buscar_pr
+            // 
+            this.Txt_buscar_pr.Location = new System.Drawing.Point(73, 46);
+            this.Txt_buscar_pr.Name = "Txt_buscar_pr";
+            this.Txt_buscar_pr.Size = new System.Drawing.Size(166, 20);
+            this.Txt_buscar_pr.TabIndex = 51;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(27, 49);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(40, 13);
+            this.label17.TabIndex = 50;
+            this.label17.Text = "Buscar";
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox1.Location = new System.Drawing.Point(0, 36);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(509, 146);
+            this.textBox1.TabIndex = 49;
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.SeaGreen;
+            this.panel6.Controls.Add(this.label10);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel6.Location = new System.Drawing.Point(0, 0);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(509, 36);
+            this.panel6.TabIndex = 10;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.SeaGreen;
+            this.label10.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.label10.Location = new System.Drawing.Point(35, 10);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(232, 17);
+            this.label10.TabIndex = 0;
+            this.label10.Text = "Busqueda rapida de productos";
+            // 
+            // Pnl_observacion
+            // 
+            this.Pnl_observacion.Controls.Add(this.Txt_observacion);
+            this.Pnl_observacion.Controls.Add(this.Btn_retornar_obs);
+            this.Pnl_observacion.Controls.Add(this.panel4);
+            this.Pnl_observacion.Location = new System.Drawing.Point(39, 276);
+            this.Pnl_observacion.Name = "Pnl_observacion";
+            this.Pnl_observacion.Size = new System.Drawing.Size(444, 167);
+            this.Pnl_observacion.TabIndex = 49;
+            this.Pnl_observacion.Visible = false;
+            // 
+            // Txt_observacion
+            // 
+            this.Txt_observacion.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Txt_observacion.Location = new System.Drawing.Point(0, 36);
+            this.Txt_observacion.Multiline = true;
+            this.Txt_observacion.Name = "Txt_observacion";
+            this.Txt_observacion.Size = new System.Drawing.Size(444, 101);
+            this.Txt_observacion.TabIndex = 49;
+            // 
+            // Btn_retornar_obs
+            // 
+            this.Btn_retornar_obs.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.Btn_retornar_obs.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.Btn_retornar_obs.FlatAppearance.BorderColor = System.Drawing.Color.CornflowerBlue;
+            this.Btn_retornar_obs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_retornar_obs.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_retornar_obs.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.Btn_retornar_obs.Location = new System.Drawing.Point(0, 137);
+            this.Btn_retornar_obs.Name = "Btn_retornar_obs";
+            this.Btn_retornar_obs.Size = new System.Drawing.Size(444, 30);
+            this.Btn_retornar_obs.TabIndex = 48;
+            this.Btn_retornar_obs.Text = "RETORNAR";
+            this.Btn_retornar_obs.UseVisualStyleBackColor = false;
+            this.Btn_retornar_obs.Click += new System.EventHandler(this.Btn_retornar_obs_Click);
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.panel4.Controls.Add(this.label9);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(444, 36);
+            this.panel4.TabIndex = 10;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.label9.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.label9.Location = new System.Drawing.Point(28, 9);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(142, 17);
+            this.label9.TabIndex = 0;
+            this.label9.Text = "OBSERVACIONES";
+            // 
             // Btn_generarcomanda
             // 
             this.Btn_generarcomanda.BackColor = System.Drawing.Color.Teal;
@@ -433,12 +756,13 @@
             this.Btn_generarcomanda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btn_generarcomanda.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_generarcomanda.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.Btn_generarcomanda.Location = new System.Drawing.Point(260, 500);
+            this.Btn_generarcomanda.Location = new System.Drawing.Point(277, 489);
             this.Btn_generarcomanda.Name = "Btn_generarcomanda";
             this.Btn_generarcomanda.Size = new System.Drawing.Size(170, 47);
             this.Btn_generarcomanda.TabIndex = 48;
             this.Btn_generarcomanda.Text = "GENERAR COMANDA";
             this.Btn_generarcomanda.UseVisualStyleBackColor = false;
+            this.Btn_generarcomanda.Click += new System.EventHandler(this.Btn_generarcomanda_Click);
             // 
             // Btn_cancelar
             // 
@@ -447,7 +771,7 @@
             this.Btn_cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btn_cancelar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_cancelar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.Btn_cancelar.Location = new System.Drawing.Point(79, 500);
+            this.Btn_cancelar.Location = new System.Drawing.Point(96, 489);
             this.Btn_cancelar.Name = "Btn_cancelar";
             this.Btn_cancelar.Size = new System.Drawing.Size(170, 47);
             this.Btn_cancelar.TabIndex = 47;
@@ -459,7 +783,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label8.Location = new System.Drawing.Point(238, 459);
+            this.label8.Location = new System.Drawing.Point(238, 455);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(77, 18);
             this.label8.TabIndex = 46;
@@ -474,7 +798,7 @@
             this.Lbl_total.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Lbl_total.Location = new System.Drawing.Point(321, 449);
             this.Lbl_total.Name = "Lbl_total";
-            this.Lbl_total.Size = new System.Drawing.Size(192, 38);
+            this.Lbl_total.Size = new System.Drawing.Size(192, 28);
             this.Lbl_total.TabIndex = 45;
             this.Lbl_total.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -483,19 +807,19 @@
             this.Dgv_detalle.AllowUserToAddRows = false;
             this.Dgv_detalle.AllowUserToDeleteRows = false;
             this.Dgv_detalle.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.Lavender;
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
-            this.Dgv_detalle.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle15.BackColor = System.Drawing.Color.Lavender;
+            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.Black;
+            this.Dgv_detalle.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle15;
             this.Dgv_detalle.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.Dgv_detalle.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.Info;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Dgv_detalle.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle16.BackColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.Info;
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Dgv_detalle.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle16;
             this.Dgv_detalle.ColumnHeadersHeight = 34;
             this.Dgv_detalle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.Dgv_detalle.EnableHeadersVisualStyles = false;
@@ -726,6 +1050,7 @@
             this.Chk_manual.TabIndex = 16;
             this.Chk_manual.Text = "Manual";
             this.Chk_manual.UseVisualStyleBackColor = true;
+            this.Chk_manual.CheckedChanged += new System.EventHandler(this.Chk_manual_CheckedChanged);
             // 
             // Btn_lupa_1
             // 
@@ -737,6 +1062,7 @@
             this.Btn_lupa_1.Size = new System.Drawing.Size(35, 34);
             this.Btn_lupa_1.TabIndex = 15;
             this.Btn_lupa_1.UseVisualStyleBackColor = true;
+            this.Btn_lupa_1.Click += new System.EventHandler(this.Btn_lupa_1_Click);
             // 
             // Txt_nrodocumento
             // 
@@ -808,194 +1134,37 @@
             this.tabPage2.Text = "Visualizar pedidos";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // Lbl_archivo_txt
-            // 
-            this.Lbl_archivo_txt.Location = new System.Drawing.Point(460, 7);
-            this.Lbl_archivo_txt.Name = "Lbl_archivo_txt";
-            this.Lbl_archivo_txt.Size = new System.Drawing.Size(44, 29);
-            this.Lbl_archivo_txt.TabIndex = 21;
-            this.Lbl_archivo_txt.Text = "Lbl_archivo_txt";
-            this.Lbl_archivo_txt.Visible = false;
-            // 
             // timer1
             // 
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // Pnl_observacion
+            // Lbl_codigo_me
             // 
-            this.Pnl_observacion.Controls.Add(this.Txt_observacion);
-            this.Pnl_observacion.Controls.Add(this.Btn_retornar_obs);
-            this.Pnl_observacion.Controls.Add(this.panel4);
-            this.Pnl_observacion.Location = new System.Drawing.Point(39, 276);
-            this.Pnl_observacion.Name = "Pnl_observacion";
-            this.Pnl_observacion.Size = new System.Drawing.Size(444, 167);
-            this.Pnl_observacion.TabIndex = 49;
-            this.Pnl_observacion.Visible = false;
+            this.Lbl_codigo_me.Location = new System.Drawing.Point(202, 6);
+            this.Lbl_codigo_me.Name = "Lbl_codigo_me";
+            this.Lbl_codigo_me.Size = new System.Drawing.Size(24, 18);
+            this.Lbl_codigo_me.TabIndex = 22;
+            this.Lbl_codigo_me.Text = "Lbl_codigo_me";
+            this.Lbl_codigo_me.Visible = false;
             // 
-            // panel4
+            // Lbl_codigo_tu
             // 
-            this.panel4.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.panel4.Controls.Add(this.label9);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(0, 0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(444, 36);
-            this.panel4.TabIndex = 10;
+            this.Lbl_codigo_tu.Location = new System.Drawing.Point(230, 3);
+            this.Lbl_codigo_tu.Name = "Lbl_codigo_tu";
+            this.Lbl_codigo_tu.Size = new System.Drawing.Size(28, 19);
+            this.Lbl_codigo_tu.TabIndex = 23;
+            this.Lbl_codigo_tu.Text = "Lbl_codigo_tu";
+            this.Lbl_codigo_tu.Visible = false;
             // 
-            // label9
+            // Lbl_fecha_trabajo
             // 
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.label9.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.label9.Location = new System.Drawing.Point(28, 9);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(142, 17);
-            this.label9.TabIndex = 0;
-            this.label9.Text = "OBSERVACIONES";
-            // 
-            // Btn_retornar_obs
-            // 
-            this.Btn_retornar_obs.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.Btn_retornar_obs.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.Btn_retornar_obs.FlatAppearance.BorderColor = System.Drawing.Color.CornflowerBlue;
-            this.Btn_retornar_obs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_retornar_obs.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_retornar_obs.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.Btn_retornar_obs.Location = new System.Drawing.Point(0, 137);
-            this.Btn_retornar_obs.Name = "Btn_retornar_obs";
-            this.Btn_retornar_obs.Size = new System.Drawing.Size(444, 30);
-            this.Btn_retornar_obs.TabIndex = 48;
-            this.Btn_retornar_obs.Text = "RETORNAR";
-            this.Btn_retornar_obs.UseVisualStyleBackColor = false;
-            this.Btn_retornar_obs.Click += new System.EventHandler(this.Btn_retornar_obs_Click);
-            // 
-            // Txt_observacion
-            // 
-            this.Txt_observacion.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Txt_observacion.Location = new System.Drawing.Point(0, 36);
-            this.Txt_observacion.Multiline = true;
-            this.Txt_observacion.Name = "Txt_observacion";
-            this.Txt_observacion.Size = new System.Drawing.Size(444, 101);
-            this.Txt_observacion.TabIndex = 49;
-            // 
-            // Pnl_busqueda_pr
-            // 
-            this.Pnl_busqueda_pr.Controls.Add(this.Btn_retornar_pr);
-            this.Pnl_busqueda_pr.Controls.Add(this.Dgv_1);
-            this.Pnl_busqueda_pr.Controls.Add(this.Btn_buscar_pr);
-            this.Pnl_busqueda_pr.Controls.Add(this.Txt_buscar_pr);
-            this.Pnl_busqueda_pr.Controls.Add(this.label17);
-            this.Pnl_busqueda_pr.Controls.Add(this.textBox1);
-            this.Pnl_busqueda_pr.Controls.Add(this.panel6);
-            this.Pnl_busqueda_pr.Location = new System.Drawing.Point(18, 127);
-            this.Pnl_busqueda_pr.Name = "Pnl_busqueda_pr";
-            this.Pnl_busqueda_pr.Size = new System.Drawing.Size(509, 182);
-            this.Pnl_busqueda_pr.TabIndex = 50;
-            this.Pnl_busqueda_pr.Visible = false;
-            // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox1.Location = new System.Drawing.Point(0, 36);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(509, 146);
-            this.textBox1.TabIndex = 49;
-            // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.Color.SeaGreen;
-            this.panel6.Controls.Add(this.label10);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel6.Location = new System.Drawing.Point(0, 0);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(509, 36);
-            this.panel6.TabIndex = 10;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.Color.SeaGreen;
-            this.label10.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.label10.Location = new System.Drawing.Point(28, 9);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(232, 17);
-            this.label10.TabIndex = 0;
-            this.label10.Text = "Busqueda rapida de productos";
-            // 
-            // Btn_retornar_pr
-            // 
-            this.Btn_retornar_pr.FlatAppearance.BorderColor = System.Drawing.Color.CornflowerBlue;
-            this.Btn_retornar_pr.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_retornar_pr.Image = ((System.Drawing.Image)(resources.GetObject("Btn_retornar_pr.Image")));
-            this.Btn_retornar_pr.Location = new System.Drawing.Point(285, 42);
-            this.Btn_retornar_pr.Name = "Btn_retornar_pr";
-            this.Btn_retornar_pr.Size = new System.Drawing.Size(34, 27);
-            this.Btn_retornar_pr.TabIndex = 54;
-            this.Btn_retornar_pr.UseVisualStyleBackColor = true;
-            this.Btn_retornar_pr.Click += new System.EventHandler(this.Btn_retornar_pr_Click);
-            // 
-            // Dgv_1
-            // 
-            this.Dgv_1.AllowUserToAddRows = false;
-            this.Dgv_1.AllowUserToDeleteRows = false;
-            this.Dgv_1.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Lavender;
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            this.Dgv_1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.Dgv_1.BackgroundColor = System.Drawing.SystemColors.Menu;
-            this.Dgv_1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.Dgv_1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.Info;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Dgv_1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.Dgv_1.ColumnHeadersHeight = 34;
-            this.Dgv_1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.Dgv_1.EnableHeadersVisualStyles = false;
-            this.Dgv_1.Location = new System.Drawing.Point(3, 75);
-            this.Dgv_1.Name = "Dgv_1";
-            this.Dgv_1.ReadOnly = true;
-            this.Dgv_1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.Dgv_1.Size = new System.Drawing.Size(503, 104);
-            this.Dgv_1.TabIndex = 53;
-            this.Dgv_1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_1_CellDoubleClick);
-            // 
-            // Btn_buscar_pr
-            // 
-            this.Btn_buscar_pr.FlatAppearance.BorderColor = System.Drawing.Color.CornflowerBlue;
-            this.Btn_buscar_pr.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_buscar_pr.Image = ((System.Drawing.Image)(resources.GetObject("Btn_buscar_pr.Image")));
-            this.Btn_buscar_pr.Location = new System.Drawing.Point(245, 42);
-            this.Btn_buscar_pr.Name = "Btn_buscar_pr";
-            this.Btn_buscar_pr.Size = new System.Drawing.Size(34, 27);
-            this.Btn_buscar_pr.TabIndex = 52;
-            this.Btn_buscar_pr.UseVisualStyleBackColor = true;
-            this.Btn_buscar_pr.Click += new System.EventHandler(this.Btn_buscar_pr_Click);
-            // 
-            // Txt_buscar_pr
-            // 
-            this.Txt_buscar_pr.Location = new System.Drawing.Point(73, 46);
-            this.Txt_buscar_pr.Name = "Txt_buscar_pr";
-            this.Txt_buscar_pr.Size = new System.Drawing.Size(166, 20);
-            this.Txt_buscar_pr.TabIndex = 51;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(27, 49);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(40, 13);
-            this.label17.TabIndex = 50;
-            this.label17.Text = "Buscar";
+            this.Lbl_fecha_trabajo.Location = new System.Drawing.Point(202, 39);
+            this.Lbl_fecha_trabajo.Name = "Lbl_fecha_trabajo";
+            this.Lbl_fecha_trabajo.Size = new System.Drawing.Size(24, 29);
+            this.Lbl_fecha_trabajo.TabIndex = 24;
+            this.Lbl_fecha_trabajo.Text = "Lbl_fecha_trabajo";
+            this.Lbl_fecha_trabajo.Visible = false;
             // 
             // Frm_Mesa_Abierta
             // 
@@ -1021,18 +1190,23 @@
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_listado_sf)).EndInit();
             this.Pnl_pedido.ResumeLayout(false);
             this.Pnl_pedido.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Dgv_detalle)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.Pnl_busqueda_cl.ResumeLayout(false);
+            this.Pnl_busqueda_cl.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Dgv_2)).EndInit();
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
+            this.Pnl_busqueda_pr.ResumeLayout(false);
+            this.Pnl_busqueda_pr.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Dgv_1)).EndInit();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
             this.Pnl_observacion.ResumeLayout(false);
             this.Pnl_observacion.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            this.Pnl_busqueda_pr.ResumeLayout(false);
-            this.Pnl_busqueda_pr.PerformLayout();
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Dgv_1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Dgv_detalle)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1104,5 +1278,18 @@
         private System.Windows.Forms.Button Btn_buscar_pr;
         private System.Windows.Forms.TextBox Txt_buscar_pr;
         private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Panel Pnl_busqueda_cl;
+        private System.Windows.Forms.Button Btn_retornar_cl;
+        private System.Windows.Forms.DataGridView Dgv_2;
+        private System.Windows.Forms.Button Btn_buscar_cl;
+        private System.Windows.Forms.TextBox Txt_buscar_cl;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Label label12;
+        private System.Drawing.Printing.PrintDocument printDocument1;
+        internal System.Windows.Forms.Label Lbl_codigo_me;
+        internal System.Windows.Forms.Label Lbl_codigo_tu;
+        internal System.Windows.Forms.Label Lbl_fecha_trabajo;
     }
 }

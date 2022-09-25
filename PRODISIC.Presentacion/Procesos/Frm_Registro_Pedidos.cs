@@ -36,6 +36,7 @@ namespace PRODISIC.Presentacion.Procesos
         private string Descripcion_pv;
         private int Codigo_us;
         private int Codigo_tu;
+        private string Fecha_trabajo;
 
         public int Codigo_me1 { get => Codigo_me; set => Codigo_me = value; }
         public string Descripcion_me1 { get => Descripcion_me; set => Descripcion_me = value; }
@@ -152,6 +153,7 @@ namespace PRODISIC.Presentacion.Procesos
                     Descripcion_pv = Convert.ToString(Tabla.Rows[nFila][4]);
                     Codigo_us = this.nCodigo_us;
                     Codigo_tu = this.nCodigo_tu;
+                    Fecha_trabajo = Txt_fechatrabajo.Text.Trim();
 
                     //Creamos la mesa para cargar los datos
                     Controles.MiMesa oMesa = new Controles.MiMesa();
@@ -162,6 +164,7 @@ namespace PRODISIC.Presentacion.Procesos
                     oMesa.Descripcion_pv = Descripcion_pv;
                     oMesa.Codigo_us = Codigo_us;
                     oMesa.Codigo_tu = Codigo_tu;
+                    oMesa.Fecha_trabajo = Fecha_trabajo;
 
                     // Añadimos la mesa al Control
                     Contenedor.Controls.Add(oMesa);
@@ -204,11 +207,12 @@ namespace PRODISIC.Presentacion.Procesos
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            if (this.nCodigo_pv>0)
+            if (this.nCodigo_pv > 0)
             {
                 this.Estado_FechaTurno_pv(this.nCodigo_pv);
+                this.LlenarPuntoVenta(flowLayoutPanel1);
             }
-           
+
         }
     }
 }
